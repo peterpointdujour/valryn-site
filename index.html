@@ -2,280 +2,64 @@
 <html>
 <head>
   <title>VALRYN</title>
-
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    .landing {
-      height: 100vh;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .landing h1 {
-      font-size: 90px;
-      letter-spacing: 8px;
-      margin: 0;
-    }
-
-    .landing h2 {
-      color: #d4af37;
-      margin: 15px 0 30px;
-    }
-
-    .btn {
-      background: white;
-      color: black;
-      padding: 14px 32px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 3px;
-      cursor: pointer;
-      display: inline-block;
-    }
-
-    #main {
-      display: none;
-      background: #050505;
-      color: white;
-    }
-
-    .site-header {
-      min-height: 70vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)),
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .brand h1 {
-      font-size: 82px;
-      letter-spacing: 8px;
-      margin-bottom: 12px;
-    }
-
-    .brand p {
-      color: #d4af37;
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 14px;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #d4af37;
-    }
-
-    section {
-      padding: 75px 8%;
-      border-bottom: 1px solid #222;
-    }
-
-    h2 {
-      color: #d4af37;
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: #ccc;
-      line-height: 1.7;
-      max-width: 900px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-      margin-top: 35px;
-    }
-
-    .card {
-      background: #111;
-      border: 1px solid #333;
-      padding: 26px;
-      border-radius: 8px;
-    }
-
-    .card h3 {
-      color: white;
-      margin-top: 0;
-    }
-
-    .tag {
-      background: #d4af37;
-      color: black;
-      padding: 5px 10px;
-      font-size: 12px;
-      font-weight: bold;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 12px;
-    }
-
-    .video-box {
-      border: 1px dashed #555;
-      color: #777;
-      padding: 35px;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .socials a {
-      display: block;
-      color: #d4af37;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 12px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px;
-      color: #777;
-      background: #000;
-    }
-
-    @media (max-width: 700px) {
-      .landing h1,
-      .brand h1 {
-        font-size: 48px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 8px;
-      }
-    }
-  </style>
 </head>
 
-<body>
+<body style="margin:0; background:black; color:white; font-family:Arial, sans-serif;">
 
-  <div class="landing" id="landing">
+  <div id="landing" style="height:100vh; background:black; display:flex; justify-content:center; align-items:center; text-align:center;">
     <div>
-      <h1>VALRYN</h1>
-      <h2>Nap rive ansanm</h2>
-      <a class="btn" onclick="enterSite()">ENTER VALRYN</a>
+      <h1 style="font-size:90px; letter-spacing:8px; margin:0;">VALRYN</h1>
+      <h2 style="font-size:28px; margin:20px 0; color:white;">Nap rive ansanm</h2>
+      <button onclick="enterSite()" style="padding:14px 35px; background:white; color:black; border:none; font-weight:bold; cursor:pointer;">
+        ENTER VALRYN
+      </button>
     </div>
   </div>
 
-  <div id="main">
+  <div id="main" style="display:none; background:black; color:white; min-height:100vh;">
 
-    <div class="site-header">
-      <div class="brand">
-        <h1>VALRYN</h1>
-        <p>Structure • Ownership • Power</p>
+    <div style="background:black; text-align:center; padding:45px 20px 25px; border-bottom:1px solid #222;">
+      <h1 style="font-size:52px; letter-spacing:5px; margin:0 0 25px;">VALRYN</h1>
 
-        <nav>
-          <a href="#about">ABOUT</a>
-          <a href="#regions">REGIONS</a>
-          <a href="#media">MEDIA</a>
-          <a href="#platform">PLATFORM</a>
-          <a href="#contact">CONTACT</a>
-        </nav>
-      </div>
+      <a href="#about" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">ABOUT</a>
+      <a href="#regions" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">REGIONS</a>
+      <a href="#media" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">MEDIA</a>
+      <a href="#contact" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">CONTACT</a>
     </div>
 
-    <section id="about">
-      <h2>About VALRYN</h2>
-      <p>VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom. It is not built around one country, one person, or one place. It is built to document real communities, organize ideas, and create structure.</p>
+    <div style="height:360px; background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center;"></div>
+
+    <section id="about" style="padding:70px 10%; border-bottom:1px solid #222;">
+      <h2 style="color:#d4af37;">About VALRYN</h2>
+      <p style="line-height:1.8; color:#ccc;">VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom. It is not built around one country, one person, or one place.</p>
     </section>
 
-    <section id="regions">
-      <h2>Regions</h2>
-      <p>VALRYN can touch any country, state, city, school, or community. Haiti is the first active region, but the mission is global.</p>
-
-      <div class="grid">
-        <div class="card">
-          <span class="tag">ACTIVE REGION</span>
-          <h3>Haiti</h3>
-          <p>Daily life, culture, education, people, community, and opportunity.</p>
-        </div>
-
-        <div class="card">
-          <span class="tag">FUTURE REGION</span>
-          <h3>United States</h3>
-          <p>Community stories, school content, entrepreneurship, and systems.</p>
-        </div>
-
-        <div class="card">
-          <span class="tag">GLOBAL</span>
-          <h3>Anywhere VALRYN Reaches</h3>
-          <p>Any place where VALRYN documents, connects, supports, or builds.</p>
-        </div>
-      </div>
+    <section id="regions" style="padding:70px 10%; border-bottom:1px solid #222;">
+      <h2 style="color:#d4af37;">Regions</h2>
+      <p style="line-height:1.8; color:#ccc;">VALRYN can touch any country, state, city, school, or community. Haiti is the first active region, but the mission is global.</p>
+      <p><b>Active Region:</b> Haiti</p>
+      <p><b>Future Regions:</b> United States and anywhere VALRYN reaches.</p>
     </section>
 
-    <section id="media">
-      <h2>Media</h2>
-      <p>VALRYN organizes content by category so anyone from anywhere can understand the movement.</p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Education</h3>
-          <p>School content, students, learning, training, classrooms, and youth development.</p>
-          <div class="video-box">Education videos coming soon</div>
-        </div>
-
-        <div class="card">
-          <h3>Daily Life</h3>
-          <p>Normal life, culture, streets, families, work, and real moments from different regions.</p>
-          <div class="video-box">Daily life videos coming soon</div>
-        </div>
-
-        <div class="card">
-          <h3>Culture</h3>
-          <p>Food, music, language, traditions, community events, identity, and celebration.</p>
-          <div class="video-box">Culture videos coming soon</div>
-        </div>
-
-        <div class="card">
-          <h3>Opportunity</h3>
-          <p>Business ideas, local projects, ownership, development, and growth.</p>
-          <div class="video-box">Opportunity videos coming soon</div>
-        </div>
-      </div>
+    <section id="media" style="padding:70px 10%; border-bottom:1px solid #222;">
+      <h2 style="color:#d4af37;">Media</h2>
+      <p style="line-height:1.8; color:#ccc;">Education, daily life, culture, opportunity, and real community stories from different places.</p>
+      <p>Education videos coming soon</p>
+      <p>Daily life videos coming soon</p>
+      <p>Culture videos coming soon</p>
+      <p>Opportunity videos coming soon</p>
     </section>
 
-    <section id="platform">
-      <h2>Platform</h2>
-      <p>The goal is to build a digital home where people can explore regions, watch media, discover school-related content, understand opportunities, and connect with the larger VALRYN movement.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
+    <section id="contact" style="padding:70px 10%;">
+      <h2 style="color:#d4af37;">Contact</h2>
       <p>Follow the official VALRYN platforms.</p>
 
-      <div class="socials">
-        <a href="https://www.youtube.com/@valrynofficial" target="_blank">YouTube: @valrynofficial</a>
-        <a href="https://www.tiktok.com/@valryn.media" target="_blank">TikTok: @valryn.media</a>
-        <a href="https://www.instagram.com/valryn.official" target="_blank">Instagram: @valryn.official</a>
-      </div>
+      <a href="https://www.youtube.com/@valrynofficial" target="_blank" style="color:#d4af37; display:block; margin:12px 0;">YouTube: @valrynofficial</a>
+      <a href="https://www.tiktok.com/@valryn.media" target="_blank" style="color:#d4af37; display:block; margin:12px 0;">TikTok: @valryn.media</a>
+      <a href="https://www.instagram.com/valryn.official" target="_blank" style="color:#d4af37; display:block; margin:12px 0;">Instagram: @valryn.official</a>
     </section>
 
-    <footer>
+    <footer style="text-align:center; padding:30px; color:#777;">
       © 2026 VALRYN. Nap rive ansanm.
     </footer>
 
@@ -285,7 +69,6 @@
     function enterSite() {
       document.getElementById("landing").style.display = "none";
       document.getElementById("main").style.display = "block";
-      window.scrollTo(0, 0);
     }
   </script>
 
