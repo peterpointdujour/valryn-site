@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>VALRYN</title>
 
 <style>
@@ -12,7 +12,7 @@ html { scroll-behavior: smooth; }
 
 body {
   background: #030508 !important;
-  color: white;
+  color: white !important;
   font-family: Arial, sans-serif;
   font-weight: 700;
   overflow-x: hidden;
@@ -22,27 +22,43 @@ a { color: white; text-decoration: none; }
 
 #landing {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at center, rgba(255,255,255,.14), transparent 28%),
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.98));
+  background: radial-gradient(circle at center, #151515 0%, #030508 55%, #000 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+#flagBg {
+  position: absolute;
+  font-size: clamp(210px, 38vw, 520px);
+  opacity: 0.12;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
-  font-size: clamp(65px, 11vw, 130px);
-  letter-spacing: 10px;
-  text-shadow: 0 0 30px white;
-  margin-bottom: 35px;
+  font-size: clamp(70px, 12vw, 140px);
+  letter-spacing: 12px;
+  text-shadow: 0 0 35px white;
+  margin-bottom: 38px;
 }
 
-#flag { font-size: 54px; margin-bottom: 14px; }
+#flag {
+  font-size: 58px;
+  margin-bottom: 14px;
+}
 
 #greeting {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 28px;
 }
 
@@ -52,7 +68,7 @@ a { color: white; text-decoration: none; }
 }
 
 .enter-btn {
-  padding: 15px 42px;
+  padding: 15px 44px;
   border: 1px solid white;
   background: rgba(255,255,255,.92);
   color: #111;
@@ -123,6 +139,7 @@ nav a {
 
 section {
   padding: 90px 10%;
+  background: #030508 !important;
 }
 
 section h2 {
@@ -169,6 +186,7 @@ footer {
   text-align: center;
   padding: 35px;
   border-top: 1px solid rgba(255,255,255,.18);
+  background: #030508;
 }
 
 @media (max-width: 700px) {
@@ -183,7 +201,9 @@ footer {
 <body>
 
 <div id="landing">
-  <div>
+  <div id="flagBg">🌐</div>
+
+  <div class="landing-content">
     <h1 class="logo">VALRYN</h1>
     <div id="flag">🌐</div>
     <div id="greeting">Hello</div>
@@ -283,33 +303,25 @@ footer {
 
   <div class="grid">
     <div class="card">
-      <video controls>
-        <source src="videos/video1.mp4" type="video/mp4">
-      </video>
+      <video controls><source src="videos/video1.mp4" type="video/mp4"></video>
       <h3>Education Video 1</h3>
       <p>Add video file later.</p>
     </div>
 
     <div class="card">
-      <video controls>
-        <source src="videos/video2.mp4" type="video/mp4">
-      </video>
+      <video controls><source src="videos/video2.mp4" type="video/mp4"></video>
       <h3>Daily Life Video 1</h3>
       <p>Add video file later.</p>
     </div>
 
     <div class="card">
-      <video controls>
-        <source src="videos/video3.mp4" type="video/mp4">
-      </video>
+      <video controls><source src="videos/video3.mp4" type="video/mp4"></video>
       <h3>Culture Video 1</h3>
       <p>Add video file later.</p>
     </div>
 
     <div class="card">
-      <video controls>
-        <source src="videos/video4.mp4" type="video/mp4">
-      </video>
+      <video controls><source src="videos/video4.mp4" type="video/mp4"></video>
       <h3>Opportunity Video 1</h3>
       <p>Add video file later.</p>
     </div>
@@ -318,7 +330,7 @@ footer {
 
 <section id="impact">
   <h2>Impact Tracker</h2>
-  <p>VALRYN will track progress openly as the platform grows. These numbers can be updated as content, projects, and community work expand.</p>
+  <p>VALRYN will track progress openly as the platform grows.</p>
 
   <div class="grid">
     <div class="card"><h3 class="gold">1</h3><p>Active Region</p></div>
@@ -386,11 +398,8 @@ footer {
 
 <script>
 function enterSite() {
-  const landing = document.getElementById("landing");
-  const main = document.getElementById("main");
-
-  landing.style.display = "none";
-  main.style.setProperty("display", "block", "important");
+  document.getElementById("landing").style.display = "none";
+  document.getElementById("main").style.display = "block";
   window.scrollTo(0, 0);
 }
 
@@ -412,6 +421,7 @@ let greetIndex = 0;
 setInterval(() => {
   greetIndex = (greetIndex + 1) % greetings.length;
   document.getElementById("flag").innerText = greetings[greetIndex][0];
+  document.getElementById("flagBg").innerText = greetings[greetIndex][0];
   document.getElementById("greeting").innerText = greetings[greetIndex][1];
 }, 5000);
 
@@ -423,23 +433,15 @@ const hour = new Date().getHours();
 if (hour >= 5 && hour < 11) {
   title.innerText = "Morning: Opportunity rises.";
   message.innerText = "A new day begins. Opportunity moves across the world.";
-  hero.style.background =
-    "linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80')";
 } else if (hour >= 11 && hour < 17) {
   title.innerText = "Afternoon: Connections grow.";
   message.innerText = "Media, education, culture, and opportunity move across regions.";
-  hero.style.background =
-    "linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80')";
 } else if (hour >= 17 && hour < 20) {
   title.innerText = "Evening: Momentum continues.";
   message.innerText = "VALRYN bridges communities, cultures, and ideas.";
-  hero.style.background =
-    "linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80')";
 } else {
   title.innerText = "Night: Building never stops.";
   message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
-  hero.style.background =
-    "linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=80')";
 }
 </script>
 
