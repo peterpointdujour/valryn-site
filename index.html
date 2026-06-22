@@ -5,42 +5,58 @@
 
 <style>
 body {
-  background-color: black;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 50px;
+    background: #111111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
 }
 
 h1 {
-  font-size: 60px;
+    font-size: 64px;
+    margin-bottom: 10px;
 }
 
 h2 {
-  color: gold;
+    color: #00bcd4;
 }
 
-.quest {
-  border: 1px solid white;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-button {
-  background-color: gold;
-  color: black;
-  border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
+.hero {
+    max-width: 800px;
+    margin: auto;
 }
-</styl<
+
+.card {
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 700px;
+    background: #1a1a1a;
+}
+
+.button {
+    display: inline-block;
+    background: #00bcd4;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background: #0097a7;
+}
+</style>
 
 </head>
 
 <body>
+
+<div class="hero">
 
 <h1>VALRYN</h1>
 
@@ -49,36 +65,48 @@ button {
 <p>
 We rise together through opportunity, community, and progress.
 </p>
-<button>Begin The Journey</button>
-<h2>The Journey</h2>
 
-<div class="quest">
+<a href="#journey" class="button">Begin The Journey</a>
+
+<h2 id="journey">The Journey</h2>
+
+<div class="card">
 <h3>Quest 1: Foundation</h3>
 <p>Build VALRYN and establish our presence.</p>
 </div>
 
-<div class="quest">
+<div class="card">
 <h3>Quest 2: Haiti Recon</h3>
 <p>Explore opportunities and strengthen community connections.</p>
 </div>
 
-<div class="quest">
+<div class="card">
 <h3>Quest 3: Economic Freedom</h3>
 <p>Create stability through ownership, investing, and growth.</p>
 </div>
+
 <h2>About VALRYN</h2>
 
-<div class="quest">
+<div class="card">
 <p>
 VALRYN is a movement dedicated to growth, opportunity,
 community development, and progress.
 
+<br><br>
+
 Our mission is simple:
 
+<br><br>
+
 Nap rive ansanm.
+
+<br><br>
 
 We rise together.
 </p>
 </div>
+
+</div>
+
 </body>
 </html>
