@@ -2,10 +2,12 @@
 <html>
 <head>
   <title>VALRYN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body style="margin:0; background:black; color:white; font-family:Arial, sans-serif;">
 
+  <!-- LANDING SCREEN -->
   <div id="landing" style="height:100vh; background:black; display:flex; justify-content:center; align-items:center; text-align:center;">
     <div>
       <h1 style="font-size:90px; letter-spacing:8px; margin:0;">VALRYN</h1>
@@ -16,10 +18,12 @@
     </div>
   </div>
 
+  <!-- MAIN SITE -->
   <div id="main" style="display:none; background:black; color:white; min-height:100vh;">
 
-    <div style="text-align:center; padding:45px 20px 25px; border-bottom:1px solid #222;">
-      <h1 style="font-size:52px; letter-spacing:5px; margin:0 0 25px;">VALRYN</h1>
+    <!-- HEADER -->
+    <div style="text-align:center; padding:45px 20px 25px; border-bottom:1px solid #222; background:black;">
+      <h1 style="font-size:56px; letter-spacing:6px; margin:0 0 25px;">VALRYN</h1>
 
       <a href="#about" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">ABOUT</a>
       <a href="#regions" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">REGIONS</a>
@@ -27,52 +31,93 @@
       <a href="#contact" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">CONTACT</a>
     </div>
 
+    <!-- HERO -->
     <div id="timeHero" style="height:650px; background:linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; display:flex; align-items:flex-end;">
-      <div style="padding:120px 10%;">
-        <h2 id="timeTitle" style="color:#d4af37; font-size:32px;">Global by vision. Connected by purpose.</h2>
-        <p id="timeMessage" style="color:white; max-width:700px; line-height:1.7;">VALRYN moves with the world.</p>
+      <div style="padding:0 10% 120px;">
+        <h2 id="timeTitle" style="color:#d4af37; font-size:34px; margin-bottom:25px;">Global by vision. Connected by purpose.</h2>
+        <p id="timeMessage" style="color:white; max-width:750px; line-height:1.8; font-size:17px;">VALRYN moves with the world.</p>
       </div>
     </div>
 
-    <section id="about" style="padding:70px 10%; border-bottom:1px solid #222;">
-      <h2 style="color:#d4af37;">About VALRYN</h2>
-      <p style="line-height:1.8; color:#ccc;">
+    <!-- ABOUT -->
+    <section id="about" style="padding:90px 12%; border-bottom:1px solid #222; background:black;">
+      <h2 style="color:#d4af37; font-size:32px;">About VALRYN</h2>
+      <p style="line-height:1.8; color:#ccc; max-width:900px;">
         VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.
-        It is not built around one country, one person, or one place.
+        It is not built around one country, one person, or one place. It is built to connect people, document real communities,
+        and create structure for long-term impact.
       </p>
     </section>
 
-    <section id="regions" style="padding:70px 10%; border-bottom:1px solid #222;">
-      <h2 style="color:#d4af37;">Regions</h2>
-      <p style="line-height:1.8; color:#ccc;">
-        VALRYN can touch any country, state, city, school, or community.
-        Haiti is the first active region, but the mission is global.
+    <!-- REGIONS -->
+    <section id="regions" style="padding:90px 12%; border-bottom:1px solid #222; background:black;">
+      <h2 style="color:#d4af37; font-size:32px;">Regions</h2>
+      <p style="line-height:1.8; color:#ccc; max-width:900px;">
+        VALRYN can reach any country, state, city, school, or community. Haiti is the first active region, but the mission is global.
       </p>
-      <p><b>Active Region:</b> Haiti</p>
-      <p><b>Future Regions:</b> United States and anywhere VALRYN reaches.</p>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:35px;">
+        <div style="background:#111; border:1px solid #333; padding:25px; width:260px;">
+          <h3 style="color:white;">Active Region</h3>
+          <p style="color:#d4af37; font-weight:bold;">Haiti</p>
+          <p style="color:#ccc; line-height:1.6;">Daily life, education, culture, people, community, and opportunity.</p>
+        </div>
+
+        <div style="background:#111; border:1px solid #333; padding:25px; width:260px;">
+          <h3 style="color:white;">Future Region</h3>
+          <p style="color:#d4af37; font-weight:bold;">United States</p>
+          <p style="color:#ccc; line-height:1.6;">Community stories, school content, entrepreneurship, and systems.</p>
+        </div>
+
+        <div style="background:#111; border:1px solid #333; padding:25px; width:260px;">
+          <h3 style="color:white;">Global Reach</h3>
+          <p style="color:#d4af37; font-weight:bold;">Anywhere VALRYN touches</p>
+          <p style="color:#ccc; line-height:1.6;">Any place where VALRYN documents, connects, supports, or builds.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="media" style="padding:70px 10%; border-bottom:1px solid #222;">
-      <h2 style="color:#d4af37;">Media</h2>
-      <p style="line-height:1.8; color:#ccc;">
-        Education, daily life, culture, opportunity, and real community stories from different places.
+    <!-- MEDIA -->
+    <section id="media" style="padding:90px 12%; border-bottom:1px solid #222; background:black;">
+      <h2 style="color:#d4af37; font-size:32px;">Media</h2>
+      <p style="line-height:1.8; color:#ccc; max-width:900px;">
+        VALRYN media organizes real stories by purpose, not by one person or one place.
       </p>
-      <p>Education videos coming soon</p>
-      <p>Daily life videos coming soon</p>
-      <p>Culture videos coming soon</p>
-      <p>Opportunity videos coming soon</p>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:35px;">
+        <div style="background:#111; border:1px solid #333; padding:25px; width:230px;">
+          <h3>Education</h3>
+          <p style="color:#ccc;">School content, students, learning, training, and youth development.</p>
+        </div>
+
+        <div style="background:#111; border:1px solid #333; padding:25px; width:230px;">
+          <h3>Daily Life</h3>
+          <p style="color:#ccc;">Real moments, normal life, family, work, streets, and culture.</p>
+        </div>
+
+        <div style="background:#111; border:1px solid #333; padding:25px; width:230px;">
+          <h3>Culture</h3>
+          <p style="color:#ccc;">Food, language, music, traditions, community, and identity.</p>
+        </div>
+
+        <div style="background:#111; border:1px solid #333; padding:25px; width:230px;">
+          <h3>Opportunity</h3>
+          <p style="color:#ccc;">Business ideas, ownership, local projects, and development.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" style="padding:70px 10%;">
-      <h2 style="color:#d4af37;">Contact</h2>
-      <p>Follow the official VALRYN platforms.</p>
+    <!-- CONTACT -->
+    <section id="contact" style="padding:90px 12%; background:black;">
+      <h2 style="color:#d4af37; font-size:32px;">Connect With VALRYN</h2>
+      <p style="color:#ccc;">Follow the official VALRYN platforms.</p>
 
-      <a href="https://www.youtube.com/@valrynofficial" target="_blank" style="color:#d4af37; display:block; margin:12px 0;">YouTube: @valrynofficial</a>
-      <a href="https://www.tiktok.com/@valryn.media" target="_blank" style="color:#d4af37; display:block; margin:12px 0;">TikTok: @valryn.media</a>
-      <a href="https://www.instagram.com/valryn.official" target="_blank" style="color:#d4af37; display:block; margin:12px 0;">Instagram: @valryn.official</a>
+      <a href="https://www.youtube.com/@valrynofficial" target="_blank" style="color:#d4af37; display:block; margin:14px 0;">YouTube: @valrynofficial</a>
+      <a href="https://www.tiktok.com/@valryn.media" target="_blank" style="color:#d4af37; display:block; margin:14px 0;">TikTok: @valryn.media</a>
+      <a href="https://www.instagram.com/valryn.official" target="_blank" style="color:#d4af37; display:block; margin:14px 0;">Instagram: @valryn.official</a>
     </section>
 
-    <footer style="text-align:center; padding:30px; color:#777;">
+    <footer style="text-align:center; padding:30px; color:#777; background:black; border-top:1px solid #222;">
       © 2026 VALRYN. Nap rive ansanm.
     </footer>
 
