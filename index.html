@@ -481,8 +481,13 @@ nav a {
 
 <script>
 function enterSite() {
-  document.getElementById("landing").style.display = "none";
-  document.getElementById("main").style.display = "block";
+  const landing = document.getElementById("landing");
+  const main = document.getElementById("main");
+
+  landing.style.display = "none";
+  main.style.setProperty("display", "block", "important");
+
+  window.scrollTo(0, 0);
 }
 
 const greetings = [
