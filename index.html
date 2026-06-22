@@ -12,16 +12,14 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
-  background: #030508;
-  color: white;
+  background: #030508 !important;
+  color: white !important;
   font-family: Arial, sans-serif;
   font-weight: 700;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -32,8 +30,8 @@ a {
 #landing {
   min-height: 100vh;
   background:
-    radial-gradient(circle at center, rgba(0,212,255,.18), transparent 35%),
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.95)),
+    radial-gradient(circle at center, rgba(255,255,255,.18), transparent 28%),
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.98)),
     url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80");
   background-size: cover;
   background-position: center;
@@ -45,70 +43,70 @@ a {
 }
 
 .logo {
-  font-size: clamp(55px, 10vw, 120px);
+  font-size: clamp(60px, 10vw, 120px);
   letter-spacing: 12px;
-  text-shadow: 0 0 25px #00d4ff;
+  text-shadow: 0 0 28px white;
 }
 
 #flag {
-  font-size: 42px;
-  margin: 20px 0;
+  font-size: 58px;
+  margin: 22px 0 10px;
 }
 
 #greeting {
-  color: #00d4ff;
-  font-size: 24px;
-  margin-bottom: 15px;
+  color: white;
+  font-size: 26px;
+  margin-bottom: 18px;
+  text-shadow: 0 0 14px white;
 }
 
 .tagline {
-  font-size: 26px;
-  margin: 20px 0;
+  font-size: 22px;
+  margin: 18px 0;
 }
 
 .enter-btn {
-  margin-top: 30px;
-  padding: 16px 42px;
-  border: 1px solid #00d4ff;
-  background: rgba(0,212,255,.12);
-  color: white;
+  margin-top: 25px;
+  padding: 15px 42px;
+  border: 1px solid white;
+  background: rgba(255,255,255,.88);
+  color: #030508;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: 0 0 18px #00d4ff;
 }
 
 #main {
   display: none;
-  background: #030508;
+  background: #030508 !important;
+  color: white !important;
 }
 
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(3,5,8,.94);
-  border-bottom: 1px solid rgba(0,212,255,.25);
+  background: rgba(3,5,8,.96) !important;
+  border-bottom: 1px solid rgba(255,255,255,.16);
   text-align: center;
-  padding: 35px 20px 25px;
-  backdrop-filter: blur(10px);
+  padding: 38px 20px 25px;
 }
 
 header h1 {
   font-size: 52px;
   letter-spacing: 8px;
-  text-shadow: 0 0 18px #00d4ff;
-  margin-bottom: 22px;
+  text-shadow: 0 0 18px white;
+  margin-bottom: 24px;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 26px;
+  gap: 28px;
 }
 
 nav a {
-  color: white;
+  color: white !important;
   font-size: 14px;
   font-weight: 900;
 }
@@ -116,46 +114,49 @@ nav a {
 .hero {
   min-height: 520px;
   background:
-    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.95)),
+    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.96)),
     url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: flex-end;
-  padding: 70px 10%;
-  border-bottom: 1px solid rgba(0,212,255,.25);
+  padding: 80px 10%;
+  border-bottom: 1px solid rgba(255,255,255,.16);
 }
 
 .hero h2 {
-  color: #00d4ff;
+  color: #f6b400;
   font-size: clamp(30px, 5vw, 55px);
-  text-shadow: 0 0 18px #00d4ff;
+  text-shadow: 0 0 16px #f6b400;
   margin-bottom: 22px;
 }
 
 .hero p {
+  color: white;
   font-size: 18px;
-  max-width: 720px;
+  max-width: 760px;
   line-height: 1.8;
 }
 
 section {
+  background: #030508 !important;
+  color: white !important;
   padding: 90px 10%;
   border-bottom: 1px solid rgba(255,255,255,.12);
 }
 
 section h2 {
-  color: #00d4ff;
+  color: #f6b400;
   font-size: 36px;
   margin-bottom: 35px;
-  text-shadow: 0 0 14px #00d4ff;
+  text-shadow: 0 0 12px #f6b400;
 }
 
 section p {
+  color: #e8e8e8;
   line-height: 1.9;
   margin-bottom: 28px;
-  max-width: 1000px;
-  color: #e5e5e5;
+  max-width: 1050px;
 }
 
 .grid {
@@ -166,21 +167,22 @@ section p {
 }
 
 .card {
-  border: 1px solid rgba(0,212,255,.35);
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.28);
   padding: 35px;
   min-height: 230px;
-  background: rgba(255,255,255,.03);
-  box-shadow: 0 0 20px rgba(0,212,255,.08);
 }
 
 .card h3 {
   color: white;
-  font-size: 24px;
-  margin-bottom: 25px;
+  font-size: 23px;
+  margin-bottom: 24px;
 }
 
-.card strong {
-  color: #00d4ff;
+.card strong,
+.counter,
+a {
+  color: #f6b400;
 }
 
 .video-card video {
@@ -191,7 +193,6 @@ section p {
 
 .counter {
   font-size: 42px;
-  color: #00d4ff;
   margin-bottom: 15px;
 }
 
@@ -201,9 +202,10 @@ section p {
 }
 
 footer {
+  background: #030508 !important;
+  color: #aaa;
   text-align: center;
   padding: 40px 20px;
-  color: #aaa;
 }
 
 @media (max-width: 700px) {
@@ -228,36 +230,10 @@ footer {
     letter-spacing: 6px;
   }
 }
-  .logo {
-  letter-spacing: 6px;
-}
-
-html, body, #landing, #main, header, section, footer {
-  background: #030508 !important;
-  color: white !important;
-}
-
-h1, h2, h3, p, nav a {
-  color: white !important;
-}
-
-section h2,
-.hero h2,
-#greeting,
-.counter,
-.card strong,
-a {
-  color: #00d4ff !important;
-}
-
-.card {
-  background: rgba(255,255,255,.03) !important;
-  border: 1px solid rgba(0,212,255,.35) !important;
-}
 </style>
 </head>
 
-<body>
+<body style="background:#030508 !important; color:white !important;">
 
 <div id="landing">
   <div>
@@ -270,7 +246,6 @@ a {
 </div>
 
 <div id="main">
-
 <header>
   <h1>VALRYN</h1>
   <nav>
@@ -294,33 +269,15 @@ a {
 
 <section id="about">
   <h2>About VALRYN</h2>
-  <p>
-    VALRYN is a global platform for opportunity, media, education, community, culture,
-    and economic freedom. It is not built around one country, one person, or one place.
-    It is built to connect people, document real communities, and create structure for
-    long-term impact.
-  </p>
-  <p>
-    The mission begins with what we can reach now, then expands region by region.
-    Through school content, daily life, community stories, culture, media, and future
-    development projects, VALRYN is building a bridge between attention and action.
-  </p>
-  <p>
-    VALRYN exists to show what is possible when people organize, document, support,
-    and build together. Every video, story, project, and connection helps create
-    something larger than one moment.
-  </p>
-  <p class="support-note">
-    The long-term goal is simple: turn visibility into structure, and structure into opportunity.
-  </p>
+  <p>VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom. It is not built around one country, one person, or one place. It is built to connect people, document real communities, and create structure for long-term impact.</p>
+  <p>The mission begins with what we can reach now, then expands region by region. Through school content, daily life, community stories, culture, media, and future development projects, VALRYN is building a bridge between attention and action.</p>
+  <p>VALRYN exists to show what is possible when people organize, document, support, and build together. Every video, story, project, and connection helps create something larger than one moment.</p>
+  <p class="support-note">The long-term goal is simple: turn visibility into structure, and structure into opportunity.</p>
 </section>
 
 <section id="regions">
   <h2>Regions</h2>
-  <p>
-    VALRYN can reach any country, state, city, school, or community.
-    Haiti is the first active region, but the mission is global.
-  </p>
+  <p>VALRYN can reach any country, state, city, school, or community. Haiti is the first active region, but the mission is global.</p>
 
   <div class="grid">
     <div class="card">
@@ -345,10 +302,7 @@ a {
 
 <section id="media">
   <h2>Media</h2>
-  <p>
-    VALRYN media organizes real stories by purpose, not by one person or one place.
-    This section is ready for future videos and content uploads.
-  </p>
+  <p>VALRYN media organizes real stories by purpose, not by one person or one place. This section is ready for future videos and content uploads.</p>
 
   <div class="grid">
     <div class="card">
@@ -379,10 +333,7 @@ a {
 
 <section id="videos">
   <h2>Video Library</h2>
-  <p>
-    When ready, upload video files into a GitHub folder named <strong>videos</strong>,
-    then place the file name inside the video src area.
-  </p>
+  <p>Upload video files into a GitHub folder named <strong>videos</strong>, then replace the file names below.</p>
 
   <div class="grid">
     <div class="card video-card">
@@ -421,10 +372,7 @@ a {
 
 <section id="impact">
   <h2>Impact Tracker</h2>
-  <p>
-    VALRYN will track progress openly as the platform grows. These numbers can be
-    updated as content, projects, and community work expand.
-  </p>
+  <p>VALRYN will track progress openly as the platform grows. These numbers can be updated as content, projects, and community work expand.</p>
 
   <div class="grid">
     <div class="card">
@@ -443,7 +391,7 @@ a {
     </div>
 
     <div class="card">
-      <div class="counter">Coming Soon</div>
+      <div class="counter">Soon</div>
       <p>Support Options</p>
     </div>
   </div>
@@ -451,21 +399,9 @@ a {
 
 <section id="support">
   <h2>Support VALRYN</h2>
-  <p>
-    VALRYN grows through community support. Support may help fund content creation,
-    equipment, school-related documentation, community projects, supplies, shipping,
-    and future development efforts in Haiti and other regions.
-  </p>
-
-  <p>
-    Future support may help with cameras, stands, microphones, internet, transportation,
-    school supplies, clothing, toys, barrels, local projects, and the long-term goal
-    of opening the first VALRYN physical location.
-  </p>
-
-  <p class="support-note">
-    Payment options are coming soon after the official VALRYN business account is ready.
-  </p>
+  <p>VALRYN grows through community support. Support may help fund content creation, equipment, school-related documentation, community projects, supplies, shipping, and future development efforts in Haiti and other regions.</p>
+  <p>Future support may help with cameras, stands, microphones, internet, transportation, school supplies, clothing, toys, barrels, local projects, and the long-term goal of opening the first VALRYN physical location.</p>
+  <p class="support-note">Payment options are coming soon after the official VALRYN business account is ready.</p>
 
   <div class="grid">
     <div class="card">
@@ -488,27 +424,17 @@ a {
   <div class="grid">
     <div class="card">
       <h3>Privacy Policy</h3>
-      <p>
-        VALRYN does not sell personal information. If visitors contact VALRYN by email
-        or social media, any information shared is used only to respond and manage
-        related work.
-      </p>
+      <p>VALRYN does not sell personal information. If visitors contact VALRYN by email or social media, any information shared is used only to respond and manage related work.</p>
     </div>
 
     <div class="card">
       <h3>Support Policy</h3>
-      <p>
-        Support options are not active yet. When support becomes available, VALRYN will
-        work to keep clear records of funds, supplies, receipts, photos, and project updates.
-      </p>
+      <p>Support options are not active yet. When support becomes available, VALRYN will work to keep clear records of funds, supplies, receipts, photos, and project updates.</p>
     </div>
 
     <div class="card">
       <h3>Transparency</h3>
-      <p>
-        VALRYN will document progress as the platform grows, including videos, projects,
-        supplies, and community development efforts.
-      </p>
+      <p>VALRYN will document progress as the platform grows, including videos, projects, supplies, and community development efforts.</p>
     </div>
   </div>
 </section>
@@ -526,7 +452,6 @@ a {
 <footer>
   © 2026 VALRYN. Nap rive ansanm.
 </footer>
-
 </div>
 
 <script>
@@ -561,23 +486,18 @@ const title = document.getElementById("timeTitle");
 const message = document.getElementById("timeMessage");
 const hour = new Date().getHours();
 
-if (hero && title && message) {
-  hero.style.background =
-    "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.92)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat";
-
-  if (hour >= 5 && hour < 11) {
-    title.innerText = "Morning: Opportunity rises.";
-    message.innerText = "A new day begins. Opportunity moves across the world.";
-  } else if (hour >= 11 && hour < 17) {
-    title.innerText = "Afternoon: Connections grow.";
-    message.innerText = "Media, education, culture, and opportunity move across regions.";
-  } else if (hour >= 17 && hour < 20) {
-    title.innerText = "Evening: Momentum continues.";
-    message.innerText = "VALRYN bridges communities, cultures, and ideas.";
-  } else {
-    title.innerText = "Night: Building never stops.";
-    message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
-  }
+if (hour >= 5 && hour < 11) {
+  title.innerText = "Morning: Opportunity rises.";
+  message.innerText = "A new day begins. Opportunity moves across the world.";
+} else if (hour >= 11 && hour < 17) {
+  title.innerText = "Afternoon: Connections grow.";
+  message.innerText = "Media, education, culture, and opportunity move across regions.";
+} else if (hour >= 17 && hour < 20) {
+  title.innerText = "Evening: Momentum continues.";
+  message.innerText = "VALRYN bridges communities, cultures, and ideas.";
+} else {
+  title.innerText = "Night: Building never stops.";
+  message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
 }
 </script>
 
