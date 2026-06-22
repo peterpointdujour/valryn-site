@@ -1,483 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VALRYN</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VALRYN</title>
 
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      background: #050505;
-      color: white;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      line-height: 1.6;
-    }
+body {
+  background: #030508;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  overflow-x: hidden;
+}
 
-    a { color: inherit; text-decoration: none; }
+a {
+  color: #00d4ff;
+  text-decoration: none;
+}
 
-    .gold { color: #d4af37; }
+#landing {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at center, rgba(0,212,255,.18), transparent 35%),
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.95)),
+    url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
 
-    #landing {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.96)),
-        url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-    }
+.logo {
+  font-size: clamp(55px, 10vw, 120px);
+  letter-spacing: 12px;
+  text-shadow: 0 0 25px #00d4ff;
+}
 
-    #landing h1 {
-      font-size: clamp(60px, 12vw, 120px);
-      letter-spacing: 10px;
-      margin-bottom: 18px;
-    }
+#flag {
+  font-size: 42px;
+  margin: 20px 0;
+}
 
-    #globe {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
+#greeting {
+  color: #00d4ff;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
 
-    #greeting {
-      font-size: clamp(28px, 6vw, 52px);
-      color: #d4af37;
-      margin-bottom: 20px;
-      transition: opacity .5s ease;
-    }
+.tagline {
+  font-size: 26px;
+  margin: 20px 0;
+}
 
-    #landing p {
-      color: #f1f1f1;
-      margin-bottom: 28px;
-      font-size: 18px;
-    }
+.enter-btn {
+  margin-top: 30px;
+  padding: 16px 42px;
+  border: 1px solid #00d4ff;
+  background: rgba(0,212,255,.12);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 0 18px #00d4ff;
+}
 
-    button {
-      padding: 15px 38px;
-      border: none;
-      background: white;
-      color: black;
-      font-weight: 900;
-      cursor: pointer;
-      letter-spacing: 1px;
-    }
+#main {
+  display: none;
+  background: #030508;
+}
 
-    #main {
-      display: none;
-      background: #050505;
-      min-height: 100vh;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(3,5,8,.94);
+  border-bottom: 1px solid rgba(0,212,255,.25);
+  text-align: center;
+  padding: 35px 20px 25px;
+  backdrop-filter: blur(10px);
+}
 
-    header {
-      text-align: center;
-      padding: 45px 20px 30px;
-      border-bottom: 1px solid #222;
-      background: #050505;
-    }
+header h1 {
+  font-size: 52px;
+  letter-spacing: 8px;
+  text-shadow: 0 0 18px #00d4ff;
+  margin-bottom: 22px;
+}
 
-    header h1 {
-      font-size: clamp(42px, 8vw, 72px);
-      letter-spacing: 8px;
-      margin-bottom: 20px;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 28px;
-    }
+nav a {
+  color: white;
+  font-size: 14px;
+  font-weight: 900;
+}
 
-    nav a {
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
+.hero {
+  min-height: 520px;
+  background:
+    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.95)),
+    url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 70px 10%;
+  border-bottom: 1px solid rgba(0,212,255,.25);
+}
 
-    nav a:hover { color: #d4af37; }
+.hero h2 {
+  color: #00d4ff;
+  font-size: clamp(30px, 5vw, 55px);
+  text-shadow: 0 0 18px #00d4ff;
+  margin-bottom: 22px;
+}
 
-    .hero {
-      min-height: 520px;
-      background:
-        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.92)),
-        url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
-      display: flex;
-      align-items: end;
-      padding: 80px 10%;
-      border-bottom: 1px solid #222;
-    }
+.hero p {
+  font-size: 18px;
+  max-width: 720px;
+  line-height: 1.8;
+}
 
-    .hero h2 {
-      font-size: clamp(28px, 5vw, 48px);
-      color: #d4af37;
-      margin-bottom: 18px;
-    }
+section {
+  padding: 90px 10%;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
 
-    .hero p {
-      max-width: 760px;
-      color: #f2f2f2;
-    }
+section h2 {
+  color: #00d4ff;
+  font-size: 36px;
+  margin-bottom: 35px;
+  text-shadow: 0 0 14px #00d4ff;
+}
 
-    section {
-      padding: 80px 10%;
-      border-bottom: 1px solid #222;
-    }
+section p {
+  line-height: 1.9;
+  margin-bottom: 28px;
+  max-width: 1000px;
+  color: #e5e5e5;
+}
 
-    section h2 {
-      color: #d4af37;
-      font-size: clamp(30px, 5vw, 46px);
-      margin-bottom: 35px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 35px;
+}
 
-    section p {
-      max-width: 950px;
-      margin-bottom: 28px;
-      color: #f1f1f1;
-    }
+.card {
+  border: 1px solid rgba(0,212,255,.35);
+  padding: 35px;
+  min-height: 230px;
+  background: rgba(255,255,255,.03);
+  box-shadow: 0 0 20px rgba(0,212,255,.08);
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(260px, 1fr));
-      gap: 35px;
-      max-width: 900px;
-      margin-top: 40px;
-    }
+.card h3 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
 
-    .card {
-      border: 1px solid #444;
-      padding: 35px;
-      min-height: 220px;
-      background: rgba(255,255,255,.03);
-    }
+.card strong {
+  color: #00d4ff;
+}
 
-    .card h3 {
-      font-size: 24px;
-      margin-bottom: 25px;
-    }
+.video-card video {
+  width: 100%;
+  margin-bottom: 18px;
+  background: #111;
+}
 
-    .card strong {
-      color: #d4af37;
-      display: block;
-      margin-bottom: 18px;
-    }
+.counter {
+  font-size: 42px;
+  color: #00d4ff;
+  margin-bottom: 15px;
+}
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(260px, 1fr));
-      gap: 35px;
-      margin-top: 40px;
-    }
+.support-note {
+  color: white;
+  font-weight: 900;
+}
 
-    .video-box {
-      border: 1px solid #444;
-      padding: 25px;
-      background: rgba(255,255,255,.03);
-    }
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
+}
 
-    .video-box video {
-      width: 100%;
-      height: 220px;
-      background: #000;
-      margin-bottom: 18px;
-    }
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 38px;
+  }
 
-    .note {
-      color: #aaa;
-      font-size: 14px;
-    }
+  nav {
+    gap: 18px;
+  }
 
-    .support-warning {
-      border-left: 4px solid #d4af37;
-      padding-left: 20px;
-      margin-top: 30px;
-      color: #ddd;
-    }
+  .hero {
+    min-height: 430px;
+    padding: 55px 7%;
+  }
 
-    .links a {
-      display: block;
-      color: #d4af37;
-      margin: 18px 0;
-      text-decoration: underline;
-    }
+  section {
+    padding: 65px 7%;
+  }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #999;
-    }
-
-    @media (max-width: 800px) {
-      .hero { min-height: 420px; padding: 60px 7%; }
-      section { padding: 60px 7%; }
-      .grid, .video-grid { grid-template-columns: 1fr; }
-      .card { min-height: auto; }
-    }
-  </style>
+  .logo {
+    letter-spacing: 6px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div id="landing">
-    <div>
-      <h1>VALRYN</h1>
-      <div id="globe">🌍</div>
-      <h2 id="greeting">Bonjou 🇭🇹</h2>
-      <p>One Platform. Many Communities. One Future.</p>
-      <button onclick="enterSite()">ENTER VALRYN</button>
+<div id="landing">
+  <div>
+    <h1 class="logo">VALRYN</h1>
+    <div id="flag">🌎</div>
+    <div id="greeting">Hello</div>
+    <p class="tagline">One Platform. Many Communities. One Future.</p>
+    <button class="enter-btn" onclick="enterSite()">ENTER VALRYN</button>
+  </div>
+</div>
+
+<div id="main">
+
+<header>
+  <h1>VALRYN</h1>
+  <nav>
+    <a href="#about">ABOUT</a>
+    <a href="#regions">REGIONS</a>
+    <a href="#media">MEDIA</a>
+    <a href="#videos">VIDEOS</a>
+    <a href="#impact">IMPACT</a>
+    <a href="#support">SUPPORT</a>
+    <a href="#policies">POLICIES</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<div class="hero" id="timeHero">
+  <div>
+    <h2 id="timeTitle">VALRYN ONLINE</h2>
+    <p id="timeMessage">Connecting communities, stories, regions, and opportunity.</p>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About VALRYN</h2>
+  <p>
+    VALRYN is a global platform for opportunity, media, education, community, culture,
+    and economic freedom. It is not built around one country, one person, or one place.
+    It is built to connect people, document real communities, and create structure for
+    long-term impact.
+  </p>
+  <p>
+    The mission begins with what we can reach now, then expands region by region.
+    Through school content, daily life, community stories, culture, media, and future
+    development projects, VALRYN is building a bridge between attention and action.
+  </p>
+  <p>
+    VALRYN exists to show what is possible when people organize, document, support,
+    and build together. Every video, story, project, and connection helps create
+    something larger than one moment.
+  </p>
+  <p class="support-note">
+    The long-term goal is simple: turn visibility into structure, and structure into opportunity.
+  </p>
+</section>
+
+<section id="regions">
+  <h2>Regions</h2>
+  <p>
+    VALRYN can reach any country, state, city, school, or community.
+    Haiti is the first active region, but the mission is global.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Active Region</h3>
+      <p><strong>🇭🇹 Haiti</strong></p>
+      <p>Daily life, education, culture, people, community, and opportunity.</p>
+    </div>
+
+    <div class="card">
+      <h3>Future Region</h3>
+      <p><strong>🇺🇸 United States</strong></p>
+      <p>Community stories, school content, entrepreneurship, and local development.</p>
+    </div>
+
+    <div class="card">
+      <h3>Global Reach</h3>
+      <p><strong>Anywhere VALRYN reaches</strong></p>
+      <p>Any place where VALRYN documents, builds, connects, or supports.</p>
     </div>
   </div>
+</section>
 
-  <div id="main">
-    <header>
-      <h1>VALRYN</h1>
-      <nav>
-        <a href="#about">ABOUT</a>
-        <a href="#regions">REGIONS</a>
-        <a href="#media">MEDIA</a>
-        <a href="#impact">IMPACT</a>
-        <a href="#support">SUPPORT</a>
-        <a href="#policies">POLICIES</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
-    </header>
+<section id="media">
+  <h2>Media</h2>
+  <p>
+    VALRYN media organizes real stories by purpose, not by one person or one place.
+    This section is ready for future videos and content uploads.
+  </p>
 
-    <div class="hero" id="timeHero">
-      <div>
-        <h2 id="timeTitle">Global by vision. Connected by purpose.</h2>
-        <p id="timeMessage">VALRYN moves with the world.</p>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Education</h3>
+      <p>School content, students, learning, training, and youth development.</p>
+      <p><strong>Videos coming soon.</strong></p>
     </div>
 
-    <section id="about">
-      <h2>About VALRYN</h2>
-      <p>VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom. It is not built around one country, one person, or one place. It is built to connect people, document real communities, and create structure for long-term impact.</p>
-      <p>The mission begins with what we can reach now, then expands region by region. Through school content, daily life, community stories, culture, media, and future development projects, VALRYN is building a bridge between attention and action.</p>
-      <p>VALRYN exists to show what is possible when people organize, document, support, and build together. Every video, story, project, and connection helps create something larger than one moment.</p>
-      <p><strong>The long-term goal is simple: turn visibility into structure, and structure into opportunity.</strong></p>
-    </section>
+    <div class="card">
+      <h3>Daily Life</h3>
+      <p>Real moments, normal life, family, work, streets, and culture.</p>
+      <p><strong>Videos coming soon.</strong></p>
+    </div>
 
-    <section id="regions">
-      <h2>Regions</h2>
-      <p>VALRYN can reach any country, state, city, school, or community. Haiti is the first active region, but the mission is global.</p>
+    <div class="card">
+      <h3>Culture</h3>
+      <p>Food, language, music, traditions, community, and identity.</p>
+      <p><strong>Videos coming soon.</strong></p>
+    </div>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Active Region</h3>
-          <strong>Haiti</strong>
-          <p>Daily life, education, culture, people, community, and opportunity.</p>
-        </div>
-
-        <div class="card">
-          <h3>Future Region</h3>
-          <strong>United States</strong>
-          <p>Community stories, school content, entrepreneurship, and local development.</p>
-        </div>
-
-        <div class="card">
-          <h3>Global Reach</h3>
-          <strong>Anywhere VALRYN reaches</strong>
-          <p>Any place where VALRYN documents, builds, connects, or supports.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="media">
-      <h2>Media</h2>
-      <p>VALRYN media organizes real stories by purpose, not by one person or one place. This section is ready for future videos and content uploads.</p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Education</h3>
-          <p>School content, students, learning, training, and youth development.</p>
-          <p class="note">Videos coming soon.</p>
-        </div>
-
-        <div class="card">
-          <h3>Daily Life</h3>
-          <p>Real moments, normal life, family, work, streets, and culture.</p>
-          <p class="note">Videos coming soon.</p>
-        </div>
-
-        <div class="card">
-          <h3>Culture</h3>
-          <p>Food, language, music, traditions, community, and identity.</p>
-          <p class="note">Videos coming soon.</p>
-        </div>
-
-        <div class="card">
-          <h3>Opportunity</h3>
-          <p>Business ideas, ownership, local projects, and development.</p>
-          <p class="note">Videos coming soon.</p>
-        </div>
-      </div>
-
-      <h2 style="margin-top:70px;">Video Library</h2>
-      <p class="note">Later, upload video files into a GitHub folder named <strong>videos</strong>, then place the file name inside the video src area.</p>
-
-      <div class="video-grid">
-        <div class="video-box">
-          <video controls src=""></video>
-          <h3>Education Video 1</h3>
-          <p class="note">Add video file later.</p>
-        </div>
-
-        <div class="video-box">
-          <video controls src=""></video>
-          <h3>Daily Life Video 1</h3>
-          <p class="note">Add video file later.</p>
-        </div>
-
-        <div class="video-box">
-          <video controls src=""></video>
-          <h3>Culture Video 1</h3>
-          <p class="note">Add video file later.</p>
-        </div>
-
-        <div class="video-box">
-          <video controls src=""></video>
-          <h3>Opportunity Video 1</h3>
-          <p class="note">Add video file later.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="impact">
-      <h2>Impact Tracker</h2>
-      <p>VALRYN will track progress openly as the platform grows. These numbers can be updated as content, projects, and community work expand.</p>
-
-      <div class="grid">
-        <div class="card"><h3 class="gold">1</h3><p>Active Region</p></div>
-        <div class="card"><h3 class="gold">0</h3><p>Published Website Videos</p></div>
-        <div class="card"><h3 class="gold">0</h3><p>Community Projects</p></div>
-        <div class="card"><h3 class="gold">Coming Soon</h3><p>Support Options</p></div>
-      </div>
-    </section>
-
-    <section id="support">
-      <h2>Support VALRYN</h2>
-      <p>VALRYN grows through community support. Support may help fund content creation, equipment, school-related documentation, community projects, supplies, shipping, and future development efforts in Haiti and other regions.</p>
-      <p>Future support may help with cameras, stands, microphones, internet, transportation, school supplies, clothing, toys, barrels, local projects, and the long-term goal of opening the first VALRYN physical location.</p>
-      <p class="support-warning">Payment options are coming soon after the official VALRYN business account is ready.</p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Community Support</h3>
-          <p>For future projects, operations, media, and development.</p>
-          <p class="note">Coming soon.</p>
-        </div>
-
-        <div class="card">
-          <h3>Supply Drives</h3>
-          <p>Clothes, toys, school materials, and community supplies.</p>
-          <p class="note">Coming soon.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="policies">
-      <h2>Policies</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Privacy Policy</h3>
-          <p>VALRYN does not sell personal information. If visitors contact VALRYN by email or social media, any information shared is used only to respond, communicate, or organize future VALRYN-related work.</p>
-        </div>
-
-        <div class="card">
-          <h3>Support Policy</h3>
-          <p>Support options are not active yet. When support becomes available, VALRYN will work to keep clear records of funds, supplies, receipts, photos, and project use whenever possible.</p>
-        </div>
-
-        <div class="card">
-          <h3>Media Policy</h3>
-          <p>VALRYN documents real communities with respect. Content should represent people, schools, culture, and regions with dignity.</p>
-        </div>
-
-        <div class="card">
-          <h3>Transparency</h3>
-          <p>VALRYN is currently building its platform. Information, impact numbers, support options, and future projects may change as the mission grows.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Connect With VALRYN</h2>
-      <p>Follow the official VALRYN platforms or contact the team directly.</p>
-
-      <div class="links">
-        <a href="mailto:valrynllc@gmail.com">Email: valrynllc@gmail.com</a>
-        <a href="https://www.youtube.com/@valrynofficial" target="_blank">YouTube: @valrynofficial</a>
-        <a href="https://www.tiktok.com/@valryn.media" target="_blank">TikTok: @valryn.media</a>
-        <a href="https://www.instagram.com/valryn.official" target="_blank">Instagram: @valryn.official</a>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 VALRYN. Nap rive ansanm.
-    </footer>
+    <div class="card">
+      <h3>Opportunity</h3>
+      <p>Business ideas, ownership, local projects, and development.</p>
+      <p><strong>Videos coming soon.</strong></p>
+    </div>
   </div>
+</section>
 
-  <script>
-    function enterSite() {
-      document.getElementById("landing").style.display = "none";
-      document.getElementById("main").style.display = "block";
-      window.scrollTo(0, 0);
-    }
+<section id="videos">
+  <h2>Video Library</h2>
+  <p>
+    When ready, upload video files into a GitHub folder named <strong>videos</strong>,
+    then place the file name inside the video src area.
+  </p>
 
-    const greetings = [
-      "Bonjou 🇭🇹",
-      "Hello 🇺🇸",
-      "Bonjour 🇫🇷",
-      "Hola 🇪🇸",
-      "Olá 🇧🇷",
-      "Nǐ hǎo 🇨🇳",
-      "Konnichiwa 🇯🇵",
-      "Annyeonghaseyo 🇰🇷",
-      "Guten Tag 🇩🇪",
-      "Namaste 🇮🇳"
-    ];
+  <div class="grid">
+    <div class="card video-card">
+      <video controls>
+        <source src="videos/education-1.mp4" type="video/mp4">
+      </video>
+      <h3>Education Video 1</h3>
+      <p>Add video file later.</p>
+    </div>
 
-    let greetingIndex = 0;
-    const greetingElement = document.getElementById("greeting");
+    <div class="card video-card">
+      <video controls>
+        <source src="videos/daily-life-1.mp4" type="video/mp4">
+      </video>
+      <h3>Daily Life Video 1</h3>
+      <p>Add video file later.</p>
+    </div>
 
-    setInterval(function() {
-      greetingElement.style.opacity = 0;
+    <div class="card video-card">
+      <video controls>
+        <source src="videos/culture-1.mp4" type="video/mp4">
+      </video>
+      <h3>Culture Video 1</h3>
+      <p>Add video file later.</p>
+    </div>
 
-      setTimeout(function() {
-        greetingIndex = (greetingIndex + 1) % greetings.length;
-        greetingElement.innerText = greetings[greetingIndex];
-        greetingElement.style.opacity = 1;
-      }, 500);
-    }, 5000);
+    <div class="card video-card">
+      <video controls>
+        <source src="videos/opportunity-1.mp4" type="video/mp4">
+      </video>
+      <h3>Opportunity Video 1</h3>
+      <p>Add video file later.</p>
+    </div>
+  </div>
+</section>
 
-    const title = document.getElementById("timeTitle");
-    const message = document.getElementById("timeMessage");
-    const hour = new Date().getHours();
+<section id="impact">
+  <h2>Impact Tracker</h2>
+  <p>
+    VALRYN will track progress openly as the platform grows. These numbers can be
+    updated as content, projects, and community work expand.
+  </p>
 
-    if (title && message) {
-      if (hour >= 5 && hour < 11) {
-        title.innerText = "Morning: Opportunity rises.";
-        message.innerText = "A new day begins. Opportunity moves across the world.";
-      } else if (hour >= 11 && hour < 17) {
-        title.innerText = "Afternoon: Connections grow.";
-        message.innerText = "Media, education, culture, and opportunity move across regions.";
-      } else if (hour >= 17 && hour < 20) {
-        title.innerText = "Evening: Momentum continues.";
-        message.innerText = "VALRYN bridges communities, cultures, and ideas.";
-      } else {
-        title.innerText = "Night: Building never stops.";
-        message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
-      }
-    }
-  </script>
+  <div class="grid">
+    <div class="card">
+      <div class="counter">1</div>
+      <p>Active Region</p>
+    </div>
+
+    <div class="card">
+      <div class="counter">0</div>
+      <p>Published Website Videos</p>
+    </div>
+
+    <div class="card">
+      <div class="counter">0</div>
+      <p>Community Projects</p>
+    </div>
+
+    <div class="card">
+      <div class="counter">Coming Soon</div>
+      <p>Support Options</p>
+    </div>
+  </div>
+</section>
+
+<section id="support">
+  <h2>Support VALRYN</h2>
+  <p>
+    VALRYN grows through community support. Support may help fund content creation,
+    equipment, school-related documentation, community projects, supplies, shipping,
+    and future development efforts in Haiti and other regions.
+  </p>
+
+  <p>
+    Future support may help with cameras, stands, microphones, internet, transportation,
+    school supplies, clothing, toys, barrels, local projects, and the long-term goal
+    of opening the first VALRYN physical location.
+  </p>
+
+  <p class="support-note">
+    Payment options are coming soon after the official VALRYN business account is ready.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Community Support</h3>
+      <p>For future projects, operations, media, and development.</p>
+      <p><strong>Coming soon.</strong></p>
+    </div>
+
+    <div class="card">
+      <h3>Supply Drives</h3>
+      <p>Clothes, toys, school materials, and community supplies.</p>
+      <p><strong>Coming soon.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="policies">
+  <h2>Policies</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Privacy Policy</h3>
+      <p>
+        VALRYN does not sell personal information. If visitors contact VALRYN by email
+        or social media, any information shared is used only to respond and manage
+        related work.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Support Policy</h3>
+      <p>
+        Support options are not active yet. When support becomes available, VALRYN will
+        work to keep clear records of funds, supplies, receipts, photos, and project updates.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Transparency</h3>
+      <p>
+        VALRYN will document progress as the platform grows, including videos, projects,
+        supplies, and community development efforts.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Connect With VALRYN</h2>
+  <p>Follow the official VALRYN platforms or contact the team directly.</p>
+
+  <p><a href="mailto:valrynllc@gmail.com">Email: valrynllc@gmail.com</a></p>
+  <p><a href="https://www.youtube.com/@valrynofficial" target="_blank">YouTube: @valrynofficial</a></p>
+  <p><a href="https://www.tiktok.com/@valryn.media" target="_blank">TikTok: @valryn.media</a></p>
+  <p><a href="https://www.instagram.com/valryn.official" target="_blank">Instagram: @valryn.official</a></p>
+</section>
+
+<footer>
+  © 2026 VALRYN. Nap rive ansanm.
+</footer>
+
+</div>
+
+<script>
+function enterSite() {
+  document.getElementById("landing").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}
+
+const greetings = [
+  ["🌎", "Hello"],
+  ["🇭🇹", "Bonjou"],
+  ["🇫🇷", "Bonjour"],
+  ["🇪🇸", "Hola"],
+  ["🇧🇷", "Olá"],
+  ["🇮🇹", "Ciao"],
+  ["🇯🇵", "Konnichiwa"],
+  ["🇮🇳", "Namaste"],
+  ["🇸🇦", "Salam"],
+  ["🇨🇳", "Ni hao"]
+];
+
+let greetIndex = 0;
+
+setInterval(() => {
+  greetIndex = (greetIndex + 1) % greetings.length;
+  document.getElementById("flag").innerText = greetings[greetIndex][0];
+  document.getElementById("greeting").innerText = greetings[greetIndex][1];
+}, 5000);
+
+const hero = document.getElementById("timeHero");
+const title = document.getElementById("timeTitle");
+const message = document.getElementById("timeMessage");
+const hour = new Date().getHours();
+
+if (hero && title && message) {
+  hero.style.background =
+    "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.92)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat";
+
+  if (hour >= 5 && hour < 11) {
+    title.innerText = "Morning: Opportunity rises.";
+    message.innerText = "A new day begins. Opportunity moves across the world.";
+  } else if (hour >= 11 && hour < 17) {
+    title.innerText = "Afternoon: Connections grow.";
+    message.innerText = "Media, education, culture, and opportunity move across regions.";
+  } else if (hour >= 17 && hour < 20) {
+    title.innerText = "Evening: Momentum continues.";
+    message.innerText = "VALRYN bridges communities, cultures, and ideas.";
+  } else {
+    title.innerText = "Night: Building never stops.";
+    message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
+  }
+}
+</script>
 
 </body>
 </html>
