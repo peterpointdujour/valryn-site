@@ -1,112 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>VALRYN</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALRYN</title>
 
-<style>
-body {
-    background: #111111;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 40px;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: white;
+      line-height: 1.6;
+    }
 
-h2 {
-    color: #00bcd4;
-}
+    header {
+      min-height: 100vh;
+      padding: 30px 20px;
+      background: linear-gradient(to bottom, #050505, #111);
+      text-align: center;
+    }
 
-.hero {
-    max-width: 800px;
-    margin: auto;
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 90px;
+    }
 
-.card {
-    border: 1px solid #444;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 700px;
-    background: #1a1a1a;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
 
-.button {
-    display: inline-block;
-    background: #00bcd4;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-}
+    nav a:hover {
+      color: #d4af37;
+    }
 
-.button:hover {
-    background: #0097a7;
-}
-</style>
+    h1 {
+      font-size: 64px;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+    }
 
+    h2 {
+      color: #d4af37;
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+
+    p {
+      max-width: 750px;
+      margin: 0 auto 20px;
+      color: #ddd;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: #d4af37;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto 0;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #333;
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .video-box {
+      background: #111;
+      border: 1px solid #333;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 30px auto;
+    }
+
+    .video-placeholder {
+      background: #000;
+      border: 1px dashed #555;
+      padding: 60px 20px;
+      margin-top: 20px;
+      color: #888;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #000;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      nav {
+        margin-bottom: 60px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="hero">
+  <header id="home">
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#journey">JOURNEY</a>
+      <a href="#media">MEDIA</a>
+      <a href="#haiti">HAITI</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
 
-<h1>VALRYN</h1>
+    <h1>VALRYN</h1>
+    <h2>Nap rive ansanm</h2>
+    <p>We rise together through opportunity, community, education, media, and economic freedom.</p>
+    <a class="button" href="#journey">BEGIN THE JOURNEY</a>
+  </header>
 
-<h2>Nap rive ansanm</h2>
+  <section id="journey">
+    <h2>The Journey</h2>
+    <p>VALRYN is being built one mission at a time. This is the foundation.</p>
 
-<p>
-We rise together through opportunity, community, and progress.
-</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Quest 1: Foundation</h3>
+        <p>Build the platform, identity, and digital home of VALRYN.</p>
+      </div>
 
-<a href="#journey" class="button">Begin The Journey</a>
+      <div class="card">
+        <h3>Quest 2: Haiti Recon</h3>
+        <p>Document real life, real needs, and real opportunities connected to Haiti.</p>
+      </div>
 
-<h2 id="journey">The Journey</h2>
+      <div class="card">
+        <h3>Quest 3: Economic Freedom</h3>
+        <p>Create pathways through ownership, skills, education, and entrepreneurship.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Quest 1: Foundation</h3>
-<p>Build VALRYN and establish our presence.</p>
-</div>
+  <section id="media">
+    <h2>VALRYN Media</h2>
+    <p>This section will hold videos, stories, interviews, school content, Haiti life footage, and community updates.</p>
 
-<div class="card">
-<h3>Quest 2: Haiti Recon</h3>
-<p>Explore opportunities and strengthen community connections.</p>
-</div>
+    <div class="video-box">
+      <h3>Featured Video</h3>
+      <p>Upload your first video later. For now, this section is ready.</p>
+      <div class="video-placeholder">
+        Video Coming Soon
+      </div>
+    </div>
 
-<div class="card">
-<h3>Quest 3: Economic Freedom</h3>
-<p>Create stability through ownership, investing, and growth.</p>
-</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Jeff School</h3>
+        <p>Education, training, school stories, and youth development.</p>
+      </div>
 
-<h2>About VALRYN</h2>
+      <div class="card">
+        <h3>Haiti Normal Life</h3>
+        <p>Everyday life, community, family, streets, work, and culture.</p>
+      </div>
 
-<div class="card">
-<p>
-VALRYN is a movement dedicated to growth, opportunity,
-community development, and progress.
+      <div class="card">
+        <h3>Opportunities</h3>
+        <p>Ideas, projects, businesses, and systems that can help people grow.</p>
+      </div>
+    </div>
+  </section>
 
-<br><br>
+  <section id="haiti">
+    <h2>Haiti Development</h2>
+    <p>VALRYN exists to connect vision with action. Haiti is part of the mission, not as charity, but as development, dignity, and opportunity.</p>
+  </section>
 
-Our mission is simple:
+  <section id="about">
+    <h2>About VALRYN</h2>
+    <p>VALRYN is a long-term organization, brand, media company, and movement focused on opportunity, community, economic freedom, Haiti development, education, entrepreneurship, and media.</p>
+  </section>
 
-<br><br>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>For now, connect with VALRYN through the official website and future media platforms.</p>
+    <a class="button" href="#home">BACK TO TOP</a>
+  </section>
 
-Nap rive ansanm.
-
-<br><br>
-
-We rise together.
-</p>
-</div>
-
-</div>
+  <footer>
+    <p>© 2026 VALRYN. Nap rive ansanm.</p>
+  </footer>
 
 </body>
 </html>
