@@ -76,32 +76,38 @@ function enterSite() {
     document.getElementById("main").style.display = "block";
 }
 
+const hero = document.getElementById("timeHero");
+const title = document.getElementById("timeTitle");
+const message = document.getElementById("timeMessage");
+
 const hour = new Date().getHours();
 
-const hero = document.querySelector('div[style*="height:360px"]');
-
-if (hero) {
-
 if (hour >= 5 && hour < 11) {
-hero.style.background =
-"linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80') center/cover";
+    hero.style.backgroundImage =
+    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80')";
+    title.innerText = "Morning: A new day begins.";
+    message.innerText = "Opportunities rise around the world.";
 }
 
 else if (hour >= 11 && hour < 17) {
-hero.style.background =
-"linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80') center/cover";
+    hero.style.backgroundImage =
+    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1600&q=80')";
+    title.innerText = "Afternoon: Connections grow.";
+    message.innerText = "Media, education, culture, and opportunity move across regions.";
 }
 
 else if (hour >= 17 && hour < 20) {
-hero.style.background =
-"linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=80') center/cover";
+    hero.style.backgroundImage =
+    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')";
+    title.innerText = "Evening: Momentum continues.";
+    message.innerText = "VALRYN connects people, ideas, and communities.";
 }
 
 else {
-hero.style.background =
-"linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80') center/cover";
-}
-
+    hero.style.backgroundImage =
+    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80')";
+    title.innerText = "Night: Building never stops.";
+    message.innerText = "VALRYN remains active across the world.";
 }
 </script>
 
