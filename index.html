@@ -83,22 +83,42 @@ const message = document.getElementById("timeMessage");
 const hour = new Date().getHours();
 
 if (hero && title && message) {
-    hero.style.background =
-    "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
+    const hour = new Date().getHours();
 
     if (hour >= 5 && hour < 11) {
+
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
         title.innerText = "Morning: Opportunity rises.";
         message.innerText = "A new day begins. Opportunity moves across the world.";
+
     } else if (hour >= 11 && hour < 17) {
+
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1526777854802-fa2f459cd5ce?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
         title.innerText = "Afternoon: Connections grow.";
         message.innerText = "Media, education, culture, and opportunity move across regions.";
+
     } else if (hour >= 17 && hour < 20) {
+
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
         title.innerText = "Evening: Momentum continues.";
         message.innerText = "VALRYN bridges communities, cultures, and ideas.";
+
     } else {
+
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
         title.innerText = "Night: Building never stops.";
         message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
     }
+}
 }
 </script>
 </body>
