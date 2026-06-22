@@ -27,7 +27,13 @@
       <a href="#contact" style="color:white; margin:0 25px; text-decoration:none; font-weight:bold;">CONTACT</a>
     </div>
 
-    <div style="height:360px; background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center;">
+    <div id="timeHero" style="height:420px; background:black; background-size:cover; background-position:center; display:flex; align-items:flex-end;">
+      <div style="padding:60px 10%; background:linear-gradient(to top, black, transparent); width:100%;">
+        <h2 id="timeTitle" style="color:#d4af37; font-size:30px;">Global by vision. Connected by purpose.</h2>
+        <p id="timeMessage" style="color:white; max-width:700px; line-height:1.7;">VALRYN moves with the world.</p>
+      </div>
+    </div>
+
     <section id="about" style="padding:70px 10%; border-bottom:1px solid #222;">
       <h2 style="color:#d4af37;">About VALRYN</h2>
       <p style="line-height:1.8; color:#ccc;">VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom. It is not built around one country, one person, or one place.</p>
@@ -68,6 +74,29 @@
     function enterSite() {
       document.getElementById("landing").style.display = "none";
       document.getElementById("main").style.display = "block";
+    }
+
+    const hour = new Date().getHours();
+    const hero = document.getElementById("timeHero");
+    const title = document.getElementById("timeTitle");
+    const message = document.getElementById("timeMessage");
+
+    if (hour >= 5 && hour < 11) {
+      hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')";
+      title.innerText = "Morning: Opportunity rises.";
+      message.innerText = "A new day begins. VALRYN moves with people, ideas, and opportunity around the world.";
+    } else if (hour >= 11 && hour < 17) {
+      hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80')";
+      title.innerText = "Afternoon: Connections grow.";
+      message.innerText = "Media, education, culture, and opportunity move across regions.";
+    } else if (hour >= 17 && hour < 20) {
+      hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80')";
+      title.innerText = "Evening: Culture connects.";
+      message.innerText = "Communities, stories, and identities continue moving across the world.";
+    } else {
+      hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80')";
+      title.innerText = "Night: The world keeps building.";
+      message.innerText = "While some rest, others build. VALRYN is global by vision and connected by purpose.";
     }
   </script>
 
