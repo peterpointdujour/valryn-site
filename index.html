@@ -80,34 +80,43 @@ const hero = document.getElementById("timeHero");
 const title = document.getElementById("timeTitle");
 const message = document.getElementById("timeMessage");
 
-const hour = new Date().getHours();
+if (hero && title && message) {
 
-if (hour >= 5 && hour < 11) {
-    hero.style.backgroundImage =
-    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80')";
-    title.innerText = "Morning: A new day begins.";
-    message.innerText = "Opportunities rise around the world.";
-}
+    const hour = new Date().getHours();
 
-else if (hour >= 11 && hour < 17) {
-    hero.style.backgroundImage =
-    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1600&q=80')";
-    title.innerText = "Afternoon: Connections grow.";
-    message.innerText = "Media, education, culture, and opportunity move across regions.";
-}
+    if (hour >= 5 && hour < 11) {
 
-else if (hour >= 17 && hour < 20) {
-    hero.style.backgroundImage =
-    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')";
-    title.innerText = "Evening: Momentum continues.";
-    message.innerText = "VALRYN connects people, ideas, and communities.";
-}
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
 
-else {
-    hero.style.backgroundImage =
-    "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80')";
-    title.innerText = "Night: Building never stops.";
-    message.innerText = "VALRYN remains active across the world.";
+        title.innerText = "Morning: A new day begins.";
+        message.innerText = "Opportunities rise around the world.";
+
+    } else if (hour >= 11 && hour < 17) {
+
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
+        title.innerText = "Afternoon: Connections grow.";
+        message.innerText = "Media, education, culture, and opportunity move across regions.";
+
+    } else if (hour >= 17 && hour < 20) {
+
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
+        title.innerText = "Evening: Momentum continues.";
+        message.innerText = "VALRYN connects people, ideas, and communities.";
+
+    } else {
+
+        hero.style.background =
+        "linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat";
+
+        title.innerText = "Night: Building never stops.";
+        message.innerText = "VALRYN remains active across the world.";
+    }
+
 }
 </script>
 
