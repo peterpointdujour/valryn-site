@@ -1,301 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VALRYN</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VALRYN</title>
 
-    body {
-      background: #050505;
-      color: white;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      overflow-x: hidden;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    #landing {
-      height: 100vh;
-      background: radial-gradient(circle at center, #222 0%, #050505 55%, #000 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+body{
+    background:#050505;
+    color:white;
+    font-family:Arial,sans-serif;
+}
 
-    #bigFlag {
-      position: absolute;
-      font-size: 280px;
-      opacity: 0.12;
-      filter: blur(1px);
-      z-index: 1;
-    }
+/* LANDING PAGE */
 
-    .landing-content {
-      position: relative;
-      z-index: 2;
-    }
+#landing{
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+    position:relative;
+    background:#050505;
+}
 
-    .landing-content h1 {
-      font-size: clamp(70px, 12vw, 150px);
-      letter-spacing: 10px;
-      text-shadow: 0 0 35px white;
-    }
+#bigFlag{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40vw;
+    opacity:.12;
+    filter:blur(1px);
+    z-index:1;
+    transition:all .6s ease;
+}
 
-    #flag {
-      font-size: 42px;
-      margin-top: 25px;
-    }
+.landing-content{
+    position:relative;
+    z-index:2;
+    padding:20px;
+}
 
-    #greeting {
-      font-size: 24px;
-      margin: 12px 0;
-    }
+.landing-content h1{
+    font-size:clamp(70px,12vw,170px);
+    letter-spacing:10px;
+    margin-bottom:20px;
+}
 
-    .tagline {
-      font-size: 18px;
-      margin: 20px 0;
-    }
+#greeting{
+    font-size:28px;
+    margin-bottom:25px;
+}
 
-    button {
-      padding: 15px 42px;
-      background: white;
-      color: black;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.enter-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:18px 45px;
+    background:white;
+    color:black;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
 
-    #main {
-      display: none;
-      background: black;
-      color: white;
-      min-height: 100vh;
-    }
+.enter-btn:hover{
+    transform:scale(1.05);
+}
 
-    header {
-      background: black;
-      text-align: center;
-      padding: 45px 20px 25px;
-      border-bottom: 1px solid #222;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+/* MAIN SITE */
 
-    header h1 {
-      font-size: 52px;
-      letter-spacing: 5px;
-      margin-bottom: 25px;
-      text-shadow: 0 0 18px white;
-    }
+#main{
+    display:none;
+    background:#050505;
+    min-height:100vh;
+}
 
-    nav a {
-      color: white;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+header{
+    text-align:center;
+    padding:40px 20px;
+    border-bottom:1px solid #222;
+}
 
-    .hero {
-      min-height: 420px;
-      background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.95)),
-        url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1800&q=80");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: flex-end;
-      padding: 70px 10%;
-      border-bottom: 1px solid #222;
-    }
+header h1{
+    font-size:60px;
+    letter-spacing:6px;
+}
 
-    .hero h2 {
-      color: #d4af37;
-      font-size: clamp(30px, 5vw, 55px);
-      margin-bottom: 20px;
-    }
+nav{
+    margin-top:25px;
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 750px;
-      line-height: 1.8;
-    }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
 
-    section {
-      padding: 70px 10%;
-      border-bottom: 1px solid #222;
-    }
+.hero{
+    padding:120px 10%;
+    text-align:center;
+}
 
-    section h2 {
-      color: #d4af37;
-      margin-bottom: 25px;
-      font-size: 32px;
-    }
+.hero h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
 
-    section p {
-      color: #ccc;
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
+.hero p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:#ccc;
+}
 
-    .gold {
-      color: #d4af37;
-    }
+section{
+    padding:80px 10%;
+    border-top:1px solid #222;
+}
 
-    footer {
-      text-align: center;
-      padding: 35px;
-      color: #777;
-    }
+section h2{
+    margin-bottom:20px;
+}
 
-    @media (max-width: 700px) {
-      #bigFlag { font-size: 210px; }
-      nav a { display: inline-block; margin: 10px; }
-      .hero { padding: 55px 7%; }
-      section { padding: 55px 7%; }
-    }
-  </style>
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #222;
+}
+</style>
 </head>
 
 <body>
 
-  <div id="landing">
+<div id="landing">
+
     <div id="bigFlag">🇭🇹</div>
 
     <div class="landing-content">
-      <h1>VALRYN</h1>
-      <div id="flag">🇭🇹</div>
-      <div id="greeting">Nap rive ansanm</div>
-      <p class="tagline">One Platform. Many Communities. One Future.</p>
-      <button onclick="enterSite()">ENTER VALRYN</button>
-    </div>
-  </div>
+        <h1>VALRYN</h1>
 
-  <div id="main">
-    <header>
-      <h1>VALRYN</h1>
-      <nav>
-        <a href="#about">ABOUT</a>
-        <a href="#regions">REGIONS</a>
-        <a href="#media">MEDIA</a>
-        <a href="#impact">IMPACT</a>
-        <a href="#support">SUPPORT</a>
-        <a href="#policies">POLICIES</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
-    </header>
+        <div id="greeting">Nap rive ansanm</div>
 
-    <div class="hero">
-      <div>
-        <h2 id="timeTitle">Building Global Impact</h2>
-        <p id="timeMessage">VALRYN connects media, education, culture, and opportunity across regions.</p>
-      </div>
+        <button class="enter-btn" onclick="enterSite()">
+            ENTER VALRYN
+        </button>
     </div>
 
-    <section id="about">
-      <h2>About VALRYN</h2>
-      <p>VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.</p>
-      <p>It is not built around one country, one person, or one place. It is built to connect people, document real communities, and create structure for long-term impact.</p>
-    </section>
+</div>
 
-    <section id="regions">
-      <h2>Regions</h2>
-      <p>VALRYN can touch any country, state, city, school, or community. Haiti is the first active region, but the mission is global.</p>
-      <p><b>Active Region:</b> Haiti</p>
-      <p><b>Future Regions:</b> United States and anywhere VALRYN reaches.</p>
-    </section>
+<div id="main">
 
-    <section id="media">
-      <h2>Media</h2>
-      <p>Education, daily life, culture, opportunity, and real community stories from different places.</p>
-      <p>Education videos coming soon.</p>
-      <p>Daily life videos coming soon.</p>
-      <p>Culture videos coming soon.</p>
-      <p>Opportunity videos coming soon.</p>
-    </section>
+<header>
+<h1>VALRYN</h1>
 
-    <section id="impact">
-      <h2>Impact Tracker</h2>
-      <p>VALRYN will track progress openly as the platform grows.</p>
-      <p><b>1</b> Active Region</p>
-      <p><b>0</b> Published Website Videos</p>
-      <p><b>0</b> Community Projects</p>
-    </section>
+<nav>
+<a href="#about">ABOUT</a>
+<a href="#regions">REGIONS</a>
+<a href="#media">MEDIA</a>
+<a href="#impact">IMPACT</a>
+<a href="#support">SUPPORT</a>
+<a href="#contact">CONTACT</a>
+</nav>
+</header>
 
-    <section id="support">
-      <h2>Support VALRYN</h2>
-      <p>Support options are not active yet. Future support may help fund content creation, community documentation, supplies, equipment, local projects, and long-term development.</p>
-    </section>
+<div class="hero">
+<h2>One Platform. Many Communities. One Future.</h2>
 
-    <section id="policies">
-      <h2>Policies</h2>
-      <p><b>Privacy:</b> VALRYN does not sell personal information.</p>
-      <p><b>Support:</b> Support options are not active yet.</p>
-      <p><b>Transparency:</b> VALRYN will document progress as the platform grows.</p>
-    </section>
+<p>
+VALRYN is a global community platform connecting people,
+ideas, projects, media, and opportunities across regions.
+</p>
+</div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Follow the official VALRYN platforms.</p>
-      <p><a class="gold" href="mailto:valrynllc@gmail.com">Email: valrynllc@gmail.com</a></p>
-      <p><a class="gold" href="https://www.youtube.com/@valrynofficial" target="_blank">YouTube: @valrynofficial</a></p>
-      <p><a class="gold" href="https://www.tiktok.com/@valryn.media" target="_blank">TikTok: @valryn.media</a></p>
-      <p><a class="gold" href="https://www.instagram.com/valryn.official" target="_blank">Instagram: @valryn.official</a></p>
-    </section>
+<section id="about">
+<h2>ABOUT</h2>
+<p>Building connections across communities worldwide.</p>
+</section>
 
-    <footer>© 2026 VALRYN. Nap rive ansanm.</footer>
-  </div>
+<section id="regions">
+<h2>REGIONS</h2>
+<p>Regional hubs and local initiatives.</p>
+</section>
 
-  <script>
-    function enterSite() {
-      document.getElementById("landing").style.display = "none";
-      document.getElementById("main").style.display = "block";
-      window.scrollTo(0, 0);
-    }
+<section id="media">
+<h2>MEDIA</h2>
+<p>Videos, updates, stories, and future content.</p>
+</section>
 
-    const greetings = [
-      ["🇭🇹", "Nap rive ansanm"],
-      ["🇺🇸", "Hello"],
-      ["🇫🇷", "Bonjour"],
-      ["🇪🇸", "Hola"],
-      ["🇧🇷", "Olá"],
-      ["🇮🇹", "Ciao"],
-      ["🇯🇵", "Konnichiwa"],
-      ["🇮🇳", "Namaste"],
-      ["🇸🇦", "Salam"],
-      ["🇨🇳", "Ni hao"]
-    ];
+<section id="impact">
+<h2>IMPACT</h2>
+<p>Projects creating measurable change.</p>
+</section>
 
-    let greetIndex = 0;
+<section id="support">
+<h2>SUPPORT</h2>
+<p>Support the VALRYN mission and community growth.</p>
+</section>
 
-    setInterval(() => {
-      greetIndex = (greetIndex + 1) % greetings.length;
-      document.getElementById("flag").innerText = greetings[greetIndex][0];
-      document.getElementById("bigFlag").innerText = greetings[greetIndex][0];
-      document.getElementById("greeting").innerText = greetings[greetIndex][1];
-    }, 3000);
+<section id="contact">
+<h2>CONTACT</h2>
+<p>Email: valrynllc@gmail.com</p>
+</section>
 
-    const hour = new Date().getHours();
-    const title = document.getElementById("timeTitle");
-    const message = document.getElementById("timeMessage");
+<footer>
+© 2026 VALRYN
+</footer>
 
-    if (hour >= 5 && hour < 11) {
-      title.innerText = "Morning: Opportunity rises.";
-      message.innerText = "A new day begins. Opportunity moves across the world.";
-    } else if (hour >= 11 && hour < 17) {
-      title.innerText = "Afternoon: Connections grow.";
-      message.innerText = "Media, education, culture, and opportunity move across regions.";
-    } else if (hour >= 17 && hour < 20) {
-      title.innerText = "Evening: Momentum continues.";
-      message.innerText = "VALRYN bridges communities, cultures, and ideas.";
-    } else {
-      title.innerText = "Night: Building never stops.";
-      message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
-    }
-  </script>
+</div>
+
+<script>
+
+const greetings = [
+    ["🇭🇹","Nap rive ansanm"],
+    ["🇺🇸","Hello"],
+    ["🇫🇷","Bonjour"],
+    ["🇪🇸","Hola"],
+    ["🇧🇷","Olá"],
+    ["🇩🇪","Hallo"],
+    ["🇮🇹","Ciao"],
+    ["🇯🇵","こんにちは"],
+    ["🇰🇷","안녕하세요"]
+];
+
+let current = 0;
+
+setInterval(() => {
+
+    current = (current + 1) % greetings.length;
+
+    document.getElementById("bigFlag").innerHTML =
+        greetings[current][0];
+
+    document.getElementById("greeting").innerHTML =
+        greetings[current][1];
+
+},3000);
+
+function enterSite(){
+
+    document.getElementById("landing").style.display="none";
+    document.getElementById("main").style.display="block";
+
+}
+
+</script>
 
 </body>
 </html>
