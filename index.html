@@ -1,144 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VALRYN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
-body{
-    background:#050505;
-    color:white;
-    font-family:Arial,sans-serif;
+#landing {
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* LANDING PAGE */
-
-#landing{
-    height:100vh;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    overflow:hidden;
-    position:relative;
-    background:#050505;
+#bigFlag {
+  position: absolute;
+  font-size: 420px;
+  opacity: 0.18;
 }
 
-#bigFlag{
-    position:absolute;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:40vw;
-    opacity:.12;
-    filter:blur(1px);
-    z-index:1;
-    transition:all .6s ease;
+#landingContent {
+  position: relative;
+  z-index: 2;
 }
 
-.landing-content{
-    position:relative;
-    z-index:2;
-    padding:20px;
+#landing h1 {
+  font-size: 90px;
+  letter-spacing: 8px;
+  margin: 0 0 20px;
 }
 
-.landing-content h1{
-    font-size:clamp(70px,12vw,170px);
-    letter-spacing:10px;
-    margin-bottom:20px;
+#greeting {
+  font-size: 28px;
+  margin-bottom: 25px;
 }
 
-#greeting{
-    font-size:28px;
-    margin-bottom:25px;
+button {
+  padding: 15px 40px;
+  background: white;
+  color: black;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.enter-btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:18px 45px;
-    background:white;
-    color:black;
-    border:none;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
-    transition:.3s;
+#main {
+  display: none;
+  background: black;
+  color: white;
+  min-height: 100vh;
 }
 
-.enter-btn:hover{
-    transform:scale(1.05);
+header {
+  text-align: center;
+  padding: 45px 20px;
+  border-bottom: 1px solid #222;
 }
 
-/* MAIN SITE */
-
-#main{
-    display:none;
-    background:#050505;
-    min-height:100vh;
+header h1 {
+  font-size: 55px;
+  letter-spacing: 5px;
 }
 
-header{
-    text-align:center;
-    padding:40px 20px;
-    border-bottom:1px solid #222;
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
 }
 
-header h1{
-    font-size:60px;
-    letter-spacing:6px;
+section {
+  padding: 70px 10%;
+  border-bottom: 1px solid #222;
 }
 
-nav{
-    margin-top:25px;
+section h2 {
+  color: #d4af37;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
-}
-
-.hero{
-    padding:120px 10%;
-    text-align:center;
-}
-
-.hero h2{
-    font-size:50px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:800px;
-    margin:auto;
-    line-height:1.8;
-    color:#ccc;
-}
-
-section{
-    padding:80px 10%;
-    border-top:1px solid #222;
-}
-
-section h2{
-    margin-bottom:20px;
-}
-
-footer{
-    text-align:center;
-    padding:40px;
-    border-top:1px solid #222;
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
 }
 </style>
 </head>
@@ -146,116 +99,73 @@ footer{
 <body>
 
 <div id="landing">
+  <div id="bigFlag">🇭🇹</div>
 
-    <div id="bigFlag">🇭🇹</div>
-
-    <div class="landing-content">
-        <h1>VALRYN</h1>
-
-        <div id="greeting">Nap rive ansanm</div>
-
-        <button class="enter-btn" onclick="enterSite()">
-            ENTER VALRYN
-        </button>
-    </div>
-
+  <div id="landingContent">
+    <h1>VALRYN</h1>
+    <div id="greeting">Nap rive ansanm</div>
+    <button onclick="enterSite()">ENTER VALRYN</button>
+  </div>
 </div>
 
 <div id="main">
+  <header>
+    <h1>VALRYN</h1>
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#regions">REGIONS</a>
+      <a href="#media">MEDIA</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
-<header>
-<h1>VALRYN</h1>
+  <section id="about">
+    <h2>About VALRYN</h2>
+    <p>VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.</p>
+  </section>
 
-<nav>
-<a href="#about">ABOUT</a>
-<a href="#regions">REGIONS</a>
-<a href="#media">MEDIA</a>
-<a href="#impact">IMPACT</a>
-<a href="#support">SUPPORT</a>
-<a href="#contact">CONTACT</a>
-</nav>
-</header>
+  <section id="regions">
+    <h2>Regions</h2>
+    <p>Haiti is the first active region, but the mission is global.</p>
+  </section>
 
-<div class="hero">
-<h2>One Platform. Many Communities. One Future.</h2>
+  <section id="media">
+    <h2>Media</h2>
+    <p>Education, daily life, culture, opportunity, and real community stories from different places.</p>
+  </section>
 
-<p>
-VALRYN is a global community platform connecting people,
-ideas, projects, media, and opportunities across regions.
-</p>
-</div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: valrynllc@gmail.com</p>
+  </section>
 
-<section id="about">
-<h2>ABOUT</h2>
-<p>Building connections across communities worldwide.</p>
-</section>
-
-<section id="regions">
-<h2>REGIONS</h2>
-<p>Regional hubs and local initiatives.</p>
-</section>
-
-<section id="media">
-<h2>MEDIA</h2>
-<p>Videos, updates, stories, and future content.</p>
-</section>
-
-<section id="impact">
-<h2>IMPACT</h2>
-<p>Projects creating measurable change.</p>
-</section>
-
-<section id="support">
-<h2>SUPPORT</h2>
-<p>Support the VALRYN mission and community growth.</p>
-</section>
-
-<section id="contact">
-<h2>CONTACT</h2>
-<p>Email: valrynllc@gmail.com</p>
-</section>
-
-<footer>
-© 2026 VALRYN
-</footer>
-
+  <footer>© 2026 VALRYN. Nap rive ansanm.</footer>
 </div>
 
 <script>
-
 const greetings = [
-    ["🇭🇹","Nap rive ansanm"],
-    ["🇺🇸","Hello"],
-    ["🇫🇷","Bonjour"],
-    ["🇪🇸","Hola"],
-    ["🇧🇷","Olá"],
-    ["🇩🇪","Hallo"],
-    ["🇮🇹","Ciao"],
-    ["🇯🇵","こんにちは"],
-    ["🇰🇷","안녕하세요"]
+  ["🇭🇹", "Nap rive ansanm"],
+  ["🇺🇸", "Hello"],
+  ["🇫🇷", "Bonjour"],
+  ["🇪🇸", "Hola"],
+  ["🇧🇷", "Olá"],
+  ["🇮🇹", "Ciao"],
+  ["🇯🇵", "Konnichiwa"]
 ];
 
 let current = 0;
 
-setInterval(() => {
+setInterval(function() {
+  current = (current + 1) % greetings.length;
+  document.getElementById("bigFlag").innerText = greetings[current][0];
+  document.getElementById("greeting").innerText = greetings[current][1];
+}, 3000);
 
-    current = (current + 1) % greetings.length;
-
-    document.getElementById("bigFlag").innerHTML =
-        greetings[current][0];
-
-    document.getElementById("greeting").innerHTML =
-        greetings[current][1];
-
-},3000);
-
-function enterSite(){
-
-    document.getElementById("landing").style.display="none";
-    document.getElementById("main").style.display="block";
-
+function enterSite() {
+  document.getElementById("landing").style.display = "none";
+  document.getElementById("main").style.display = "block";
+  window.scrollTo(0, 0);
 }
-
 </script>
 
 </body>
