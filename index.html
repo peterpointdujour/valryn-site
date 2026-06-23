@@ -5,17 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  margin: 0;
-  background: black;
+  background: #050505;
   color: white;
   font-family: Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 700;
+  overflow-x: hidden;
 }
 
 #landing {
   height: 100vh;
-  background: black;
+  background: #050505;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +28,11 @@ body {
 
 #bigFlag {
   position: absolute;
-  font-size: 420px;
+  font-size: 440px;
   opacity: 0.18;
+  filter: blur(1px);
+  z-index: 1;
+  transition: 0.8s ease;
 }
 
 #landingContent {
@@ -36,18 +41,19 @@ body {
 }
 
 #landing h1 {
-  font-size: 90px;
-  letter-spacing: 8px;
-  margin: 0 0 20px;
+  font-size: clamp(70px, 12vw, 155px);
+  letter-spacing: 10px;
+  text-shadow: 0 0 35px white;
 }
 
 #greeting {
-  font-size: 28px;
-  margin-bottom: 25px;
+  font-size: 30px;
+  margin: 25px 0;
+  text-shadow: 0 0 18px white;
 }
 
 button {
-  padding: 15px 40px;
+  padding: 16px 45px;
   background: white;
   color: black;
   border: none;
@@ -57,26 +63,58 @@ button {
 
 #main {
   display: none;
-  background: black;
+  background: #050505;
   color: white;
   min-height: 100vh;
 }
 
 header {
   text-align: center;
-  padding: 45px 20px;
+  padding: 45px 20px 30px;
   border-bottom: 1px solid #222;
+  background: #050505;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 header h1 {
-  font-size: 55px;
-  letter-spacing: 5px;
+  font-size: 58px;
+  letter-spacing: 8px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 20px white;
 }
 
 nav a {
   color: white;
-  margin: 0 15px;
+  margin: 0 18px;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 430px;
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.95)),
+    url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 70px 10%;
+  border-bottom: 1px solid #222;
+}
+
+.hero h2 {
+  color: #d4af37;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 800px;
+  line-height: 1.6;
 }
 
 section {
@@ -86,12 +124,40 @@ section {
 
 section h2 {
   color: #d4af37;
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+section p {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.gold {
+  color: #d4af37;
 }
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 35px;
   color: #777;
+}
+
+@media (max-width: 700px) {
+  nav a {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  #bigFlag {
+    font-size: 270px;
+  }
+
+  #landing h1 {
+    letter-spacing: 5px;
+  }
 }
 </style>
 </head>
@@ -115,28 +181,54 @@ footer {
       <a href="#about">ABOUT</a>
       <a href="#regions">REGIONS</a>
       <a href="#media">MEDIA</a>
+      <a href="#impact">IMPACT</a>
+      <a href="#support">SUPPORT</a>
       <a href="#contact">CONTACT</a>
     </nav>
   </header>
 
+  <div class="hero">
+    <div>
+      <h2 id="timeTitle">Building Global Impact</h2>
+      <p id="timeMessage">VALRYN connects media, education, culture, and opportunity across regions.</p>
+    </div>
+  </div>
+
   <section id="about">
     <h2>About VALRYN</h2>
     <p>VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.</p>
+    <p>It is built to connect people, document real communities, and create structure for long-term impact.</p>
   </section>
 
   <section id="regions">
     <h2>Regions</h2>
     <p>Haiti is the first active region, but the mission is global.</p>
+    <p><span class="gold">Active Region:</span> Haiti</p>
+    <p><span class="gold">Future Regions:</span> United States and anywhere VALRYN reaches.</p>
   </section>
 
   <section id="media">
     <h2>Media</h2>
     <p>Education, daily life, culture, opportunity, and real community stories from different places.</p>
+    <p>Videos and stories coming soon.</p>
+  </section>
+
+  <section id="impact">
+    <h2>Impact</h2>
+    <p>VALRYN will track growth, projects, videos, and community work openly as the platform expands.</p>
+  </section>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p>Support options are coming soon. Future support may help fund media, equipment, community work, and development projects.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: valrynllc@gmail.com</p>
+    <p>YouTube: @valrynofficial</p>
+    <p>TikTok: @valryn.media</p>
+    <p>Instagram: @valryn.official</p>
   </section>
 
   <footer>© 2026 VALRYN. Nap rive ansanm.</footer>
@@ -144,13 +236,45 @@ footer {
 
 <script>
 const greetings = [
-  ["🇭🇹", "Nap rive ansanm"],
-  ["🇺🇸", "Hello"],
-  ["🇫🇷", "Bonjour"],
-  ["🇪🇸", "Hola"],
-  ["🇧🇷", "Olá"],
-  ["🇮🇹", "Ciao"],
-  ["🇯🇵", "Konnichiwa"]
+  ["🇭🇹","Nap rive ansanm"],
+  ["🇺🇸","Hello"],
+  ["🇫🇷","Bonjour"],
+  ["🇪🇸","Hola"],
+  ["🇧🇷","Olá"],
+  ["🇮🇹","Ciao"],
+  ["🇯🇵","Konnichiwa"],
+  ["🇨🇳","Ni hao"],
+  ["🇰🇷","Annyeong"],
+  ["🇩🇪","Hallo"],
+  ["🇷🇺","Privet"],
+  ["🇵🇹","Olá"],
+  ["🇸🇦","Marhaban"],
+  ["🇮🇳","Namaste"],
+  ["🇹🇷","Merhaba"],
+  ["🇳🇱","Hallo"],
+  ["🇸🇪","Hej"],
+  ["🇳🇴","Hei"],
+  ["🇫🇮","Hei"],
+  ["🇵🇱","Czesc"],
+  ["🇬🇷","Geia sou"],
+  ["🇮🇱","Shalom"],
+  ["🇹🇭","Sawasdee"],
+  ["🇻🇳","Xin chao"],
+  ["🇮🇩","Halo"],
+  ["🇵🇭","Kamusta"],
+  ["🇿🇦","Sawubona"],
+  ["🇳🇬","Bawo"],
+  ["🇰🇪","Jambo"],
+  ["🇲🇽","Hola"],
+  ["🇨🇦","Hello"],
+  ["🇦🇺","Gday"],
+  ["🇬🇧","Hello"],
+  ["🇨🇭","Gruezi"],
+  ["🇦🇹","Servus"],
+  ["🇭🇺","Szia"],
+  ["🇨🇿","Ahoj"],
+  ["🇷🇴","Salut"],
+  ["🇺🇦","Pryvit"]
 ];
 
 let current = 0;
@@ -159,12 +283,30 @@ setInterval(function() {
   current = (current + 1) % greetings.length;
   document.getElementById("bigFlag").innerText = greetings[current][0];
   document.getElementById("greeting").innerText = greetings[current][1];
-}, 3000);
+}, 2000);
 
 function enterSite() {
   document.getElementById("landing").style.display = "none";
   document.getElementById("main").style.display = "block";
   window.scrollTo(0, 0);
+}
+
+const hour = new Date().getHours();
+const title = document.getElementById("timeTitle");
+const message = document.getElementById("timeMessage");
+
+if (hour >= 5 && hour < 11) {
+  title.innerText = "Morning: Opportunity rises.";
+  message.innerText = "A new day begins. Opportunity moves across the world.";
+} else if (hour >= 11 && hour < 17) {
+  title.innerText = "Afternoon: Connections grow.";
+  message.innerText = "Media, education, culture, and opportunity move across regions.";
+} else if (hour >= 17 && hour < 20) {
+  title.innerText = "Evening: Momentum continues.";
+  message.innerText = "VALRYN bridges communities, cultures, and ideas.";
+} else {
+  title.innerText = "Night: Building never stops.";
+  message.innerText = "While the world rests, VALRYN keeps building what connects us all.";
 }
 </script>
 
