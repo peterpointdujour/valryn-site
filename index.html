@@ -1,290 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>VALRYN</title>
-  <meta name="description" content="VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.">
-  <meta property="og:title" content="VALRYN">
-  <meta property="og:description" content="Global by vision. Connected by purpose.">
-  <meta property="og:type" content="website">
+  <title>VALRYN</title>
+  <meta name="description" content="VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.">
+  <meta property="og:title" content="VALRYN">
+  <meta property="og:description" content="Global by vision. Connected by purpose.">
+  <meta property="og:type" content="website">
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:#05070d;color:white;font-family:Arial,sans-serif;font-weight:700;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#05070d;color:white;font-family:Arial,sans-serif;font-weight:700;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
 
-    #landing{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:#05070d}
-    #landingFlag{position:absolute;inset:0;font-size:46vw;display:flex;align-items:center;justify-content:center;opacity:.45;filter:blur(1px);transform:scale(1.45);z-index:1}
-    #landing::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.22) 0%,rgba(0,0,0,.35) 35%,rgba(0,0,0,.9) 100%);z-index:2}
-    .landing-content{position:relative;z-index:3;padding:30px}
-    .landing-content h1{font-size:clamp(64px,12vw,150px);letter-spacing:12px;text-shadow:0 0 40px white;margin-bottom:20px}
-    #landingGreeting{font-size:clamp(22px,3vw,36px);margin-bottom:25px;text-shadow:0 0 20px white}
-    .enter-btn{padding:16px 44px;background:white;color:black;border:none;font-weight:900;letter-spacing:2px;cursor:pointer;transition:.25s}
-    .enter-btn:hover{transform:scale(1.05);box-shadow:0 0 25px white}
+    #landing{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:#05070d}
+    #landingFlag{position:absolute;inset:0;font-size:46vw;display:flex;align-items:center;justify-content:center;opacity:.45;filter:blur(1px);transform:scale(1.45);z-index:1}
+    #landing::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.22) 0%,rgba(0,0,0,.35) 35%,rgba(0,0,0,.9) 100%);z-index:2}
+    .landing-content{position:relative;z-index:3;padding:30px}
+    .landing-content h1{font-size:clamp(64px,12vw,150px);letter-spacing:12px;text-shadow:0 0 40px white;margin-bottom:20px}
+    #landingGreeting{font-size:clamp(22px,3vw,36px);margin-bottom:25px;text-shadow:0 0 20px white}
+    .enter-btn{padding:16px 44px;background:white;color:black;border:none;font-weight:900;letter-spacing:2px;cursor:pointer;transition:.25s}
+    .enter-btn:hover{transform:scale(1.05);box-shadow:0 0 25px white}
 
-    #main{display:none;min-height:100vh;background:#05070d}
-    header{text-align:center;padding:42px 20px 28px;background:rgba(5,7,13,.95);border-bottom:1px solid rgba(255,255,255,.12);position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}
-    header h1{font-size:clamp(42px,7vw,82px);letter-spacing:12px;text-shadow:0 0 28px white;margin-bottom:24px}
-    nav{display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin-bottom:22px}
-    nav a{font-size:14px;font-weight:900;color:white}
-    nav a:hover{color:#f4c400}
+    #main{display:none;min-height:100vh;background:#05070d}
+    header{text-align:center;padding:42px 20px 28px;background:rgba(5,7,13,.95);border-bottom:1px solid rgba(255,255,255,.12);position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}
+    header h1{font-size:clamp(42px,7vw,82px);letter-spacing:12px;text-shadow:0 0 28px white;margin-bottom:24px}
+    nav{display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin-bottom:22px}
+    nav a{font-size:14px;font-weight:900;color:white}
+    nav a:hover{color:#f4c400}
 
-    #languageSelect{background:rgba(255,255,255,.08);color:white;border:1px solid rgba(255,255,255,.35);padding:10px 16px;font-weight:800;border-radius:6px;cursor:pointer}
-    #languageSelect option{color:black}
+    #languageSelect{background:rgba(255,255,255,.08);color:white;border:1px solid rgba(255,255,255,.35);padding:10px 16px;font-weight:800;border-radius:6px;cursor:pointer}
+    #languageSelect option{color:black}
 
-    .hero{min-height:470px;display:flex;align-items:flex-end;padding:70px 9%;background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,.12)}
-    .hero h2{color:#f4c400;font-size:clamp(34px,5vw,58px);margin-bottom:14px;text-shadow:0 0 18px rgba(0,0,0,.7)}
-    .hero p{max-width:850px;line-height:1.7;color:white;font-size:18px}
+    .hero{min-height:470px;display:flex;align-items:flex-end;padding:70px 9%;background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,.12)}
+    .hero h2{color:#f4c400;font-size:clamp(34px,5vw,58px);margin-bottom:14px;text-shadow:0 0 18px rgba(0,0,0,.7)}
+    .hero p{max-width:850px;line-height:1.7;color:white;font-size:18px}
 
-    section{padding:80px 9%;border-bottom:1px solid rgba(255,255,255,.12)}
-    section h2{color:#f4c400;font-size:clamp(32px,4vw,44px);margin-bottom:24px}
-    section p{color:#e8e8e8;line-height:1.8;margin-bottom:18px;max-width:1000px}
+    section{padding:80px 9%;border-bottom:1px solid rgba(255,255,255,.12)}
+    section h2{color:#f4c400;font-size:clamp(32px,4vw,44px);margin-bottom:24px}
+    section p{color:#e8e8e8;line-height:1.8;margin-bottom:18px;max-width:1000px}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:30px}
-    .card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:28px;min-height:170px}
-    .card h3{color:#f4c400;font-size:22px;margin-bottom:14px}
-    .card p{margin:0 0 12px;font-size:16px}
-    .stat{font-size:32px;color:#f4c400;margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:30px}
+    .card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:28px;min-height:170px}
+    .card h3{color:#f4c400;font-size:22px;margin-bottom:14px}
+    .card p{margin:0 0 12px;font-size:16px}
+    .stat{font-size:32px;color:#f4c400;margin-bottom:8px}
 
-    .contact-link{display:block;color:white;margin:14px 0;width:fit-content}
-    .contact-link:hover{color:#f4c400;text-decoration:underline}
-    footer{text-align:center;padding:34px;color:#aaa;background:#05070d}
+    .contact-link{display:block;color:white;margin:14px 0;width:fit-content}
+    .contact-link:hover{color:#f4c400;text-decoration:underline}
+    footer{text-align:center;padding:34px;color:#aaa;background:#05070d}
 
-    @media(max-width:700px){
-      header{position:relative}
-      nav{gap:16px}
-      .hero{min-height:430px;padding:55px 7%}
-      section{padding:60px 7%}
-      #landingFlag{font-size:120vw;transform:scale(1.7)}
-    }
-  </style>
+    @media(max-width:700px){
+      header{position:relative}
+      nav{gap:16px}
+      .hero{min-height:430px;padding:55px 7%}
+      section{padding:60px 7%}
+      #landingFlag{font-size:120vw;transform:scale(1.7)}
+    }
+  </style>
 </head>
 
 <body>
 
 <div id="landing">
-  <div id="landingFlag">🇭🇹</div>
-  <div class="landing-content">
-    <h1>VALRYN</h1>
-    <div id="landingGreeting">Nap rive ansanm</div>
-    <button class="enter-btn" onclick="enterSite()" data-key="enterButton">ENTER VALRYN</button>
-  </div>
+  <div id="landingFlag">🇭🇹</div>
+  <div class="landing-content">
+    <h1>VALRYN</h1>
+    <div id="landingGreeting">Nap rive ansanm</div>
+    <button class="enter-btn" onclick="enterSite()" data-key="enterButton">ENTER VALRYN</button>
+  </div>
 </div>
 
 <div id="main">
-  <header>
-    <h1>VALRYN</h1>
+  <header>
+    <h1>VALRYN</h1>
 
-    <nav>
-      <a href="#about" data-key="navAbout">ABOUT</a>
-      <a href="#regions" data-key="navRegions">REGIONS</a>
-      <a href="#media" data-key="navMedia">MEDIA</a>
-      <a href="#impact" data-key="navImpact">IMPACT</a>
-      <a href="#support" data-key="navSupport">SUPPORT</a>
-      <a href="#contact" data-key="navContact">CONTACT</a>
-    </nav>
+    <nav>
+      <a href="#about" data-key="navAbout">ABOUT</a>
+      <a href="#regions" data-key="navRegions">REGIONS</a>
+      <a href="#media" data-key="navMedia">MEDIA</a>
+      <a href="#impact" data-key="navImpact">IMPACT</a>
+      <a href="#support" data-key="navSupport">SUPPORT</a>
+      <a href="#contact" data-key="navContact">CONTACT</a>
+    </nav>
 
-    <select id="languageSelect" onchange="changeLanguage(this.value)">
-      <option value="en">English</option>
-      <option value="ht">Kreyòl</option>
-      <option value="fr">Français</option>
-      <option value="es">Español</option>
-      <option value="zh">中文</option>
-    </select>
-  </header>
+    <select id="languageSelect" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="ht">Kreyòl</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="zh">中文</option>
+    </select>
+  </header>
 
-  <div class="hero" id="hero">
-    <div>
-      <h2 id="timeTitle">Night: Building never stops.</h2>
-      <p id="timeMessage">While the world rests, VALRYN keeps building what connects us all.</p>
-    </div>
-  </div>
+  <div class="hero" id="hero">
+    <div>
+      <h2 id="timeTitle">Night: Building never stops.</h2>
+      <p id="timeMessage">While the world rests, VALRYN keeps building what connects us all.</p>
+    </div>
+  </div>
 
-  <section id="about">
-    <h2 data-key="aboutTitle">About VALRYN</h2>
-    <p data-key="aboutP1">VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.</p>
-    <p data-key="aboutP2">It is built to connect people, document real communities, and create structure for long-term impact.</p>
-  </section>
+  <section id="about">
+    <h2 data-key="aboutTitle">About VALRYN</h2>
+    <p data-key="aboutP1">VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.</p>
+    <p data-key="aboutP2">It is built to connect people, document real communities, and create structure for long-term impact.</p>
+  </section>
 
-  <section id="regions">
-    <h2 data-key="regionsTitle">Regions</h2>
-    <p data-key="regionsIntro">Haiti is the first active region, but the mission is global.</p>
+  <section id="regions">
+    <h2 data-key="regionsTitle">Regions</h2>
+    <p data-key="regionsIntro">Haiti is the first active region, but the mission is global.</p>
 
-    <div class="grid">
-      <div class="card">
-        <h3 data-key="activeRegion">Active Region</h3>
-        <p data-key="haiti">🇭🇹 Haiti</p>
-        <p data-key="haitiText">Daily life, education, culture, people, community, and opportunity.</p>
-      </div>
+    <div class="grid">
+      <div class="card">
+        <h3 data-key="activeRegion">Active Region</h3>
+        <p data-key="haiti">🇭🇹 Haiti</p>
+        <p data-key="haitiText">Daily life, education, culture, people, community, and opportunity.</p>
+      </div>
 
-      <div class="card">
-        <h3 data-key="futureRegion">Future Region</h3>
-        <p data-key="usa">🇺🇸 United States</p>
-        <p data-key="usaText">Community stories, school content, entrepreneurship, and local development.</p>
-      </div>
+      <div class="card">
+        <h3 data-key="futureRegion">Future Region</h3>
+        <p data-key="usa">🇺🇸 United States</p>
+        <p data-key="usaText">Community stories, school content, entrepreneurship, and local development.</p>
+      </div>
 
-      <div class="card">
-        <h3 data-key="globalReach">Global Reach</h3>
-        <p data-key="globalText">Anywhere VALRYN reaches. Any place where VALRYN documents, builds, connects, or supports.</p>
-      </div>
-    </div>
-  </section>
+      <div class="card">
+        <h3 data-key="globalReach">Global Reach</h3>
+        <p data-key="globalText">Anywhere VALRYN reaches. Any place where VALRYN documents, builds, connects, or supports.</p>
+      </div>
+    </div>
+  </section>
 
-  <section id="media">
-    <h2 data-key="mediaTitle">Media</h2>
-    <p data-key="mediaIntro">Education, daily life, culture, opportunity, and real community stories from different places.</p>
+  <section id="media">
+    <h2 data-key="mediaTitle">Media</h2>
+    <p data-key="mediaIntro">Education, daily life, culture, opportunity, and real community stories from different places.</p>
 
-    <div class="grid">
-      <div class="card"><h3 data-key="educationTitle">Education</h3><p data-key="educationText">School content, students, learning, training, and youth development.</p></div>
-      <div class="card"><h3 data-key="dailyLifeTitle">Daily Life</h3><p data-key="dailyLifeText">Real moments, family, work, streets, culture, and community life.</p></div>
-      <div class="card"><h3 data-key="cultureTitle">Culture</h3><p data-key="cultureText">Food, language, music, traditions, identity, and connection.</p></div>
-      <div class="card"><h3 data-key="opportunityTitle">Opportunity</h3><p data-key="opportunityText">Business ideas, ownership, local projects, and development.</p></div>
-      <div class="card"><h3 data-key="videoTitle">Video Library</h3><p data-key="videoText">Videos and stories coming soon. Future uploads can include subtitles in multiple languages.</p></div>
-    </div>
-  </section>
+    <div class="grid">
+      <div class="card"><h3 data-key="educationTitle">Education</h3><p data-key="educationText">School content, students, learning, training, and youth development.</p></div>
+      <div class="card"><h3 data-key="dailyLifeTitle">Daily Life</h3><p data-key="dailyLifeText">Real moments, family, work, streets, culture, and community life.</p></div>
+      <div class="card"><h3 data-key="cultureTitle">Culture</h3><p data-key="cultureText">Food, language, music, traditions, identity, and connection.</p></div>
+      <div class="card"><h3 data-key="opportunityTitle">Opportunity</h3><p data-key="opportunityText">Business ideas, ownership, local projects, and development.</p></div>
+      <div class="card"><h3 data-key="videoTitle">Video Library</h3><p data-key="videoText">Videos and stories coming soon. Future uploads can include subtitles in multiple languages.</p></div>
+    </div>
+  </section>
 
-  <section id="impact">
-    <h2 data-key="impactTitle">Impact Tracker</h2>
-    <p data-key="impactIntro">VALRYN will track growth, projects, videos, and community work openly as the platform expands.</p>
+  <section id="impact">
+    <h2 data-key="impactTitle">Impact Tracker</h2>
+    <p data-key="impactIntro">VALRYN will track growth, projects, videos, and community work openly as the platform expands.</p>
 
-    <div class="grid">
-      <div class="card"><div class="stat">1</div><p data-key="statRegion">Active Region</p></div>
-      <div class="card"><div class="stat">0</div><p data-key="statVideos">Published Website Videos</p></div>
-      <div class="card"><div class="stat">0</div><p data-key="statProjects">Community Projects</p></div>
-      <div class="card"><h3 data-key="comingSoon">Coming Soon</h3><p data-key="supportOptions">Support Options</p></div>
-    </div>
-  </section>
+    <div class="grid">
+      <div class="card"><div class="stat">1</div><p data-key="statRegion">Active Region</p></div>
+      <div class="card"><div class="stat">0</div><p data-key="statVideos">Published Website Videos</p></div>
+      <div class="card"><div class="stat">0</div><p data-key="statProjects">Community Projects</p></div>
+      <div class="card"><h3 data-key="comingSoon">Coming Soon</h3><p data-key="supportOptions">Support Options</p></div>
+    </div>
+  </section>
 
-  <section id="support">
-    <h2 data-key="supportTitle">Support VALRYN</h2>
-    <p data-key="supportText">Support options are coming soon. Future support may help fund media, equipment, community work, school supplies, transportation, documentation, and long-term development projects.</p>
-  </section>
+  <section id="support">
+    <h2 data-key="supportTitle">Support VALRYN</h2>
+    <p data-key="supportText">Support options are coming soon. Future support may help fund media, equipment, community work, school supplies, transportation, documentation, and long-term development projects.</p>
+  </section>
 
-  <section id="contact">
-    <h2 data-key="contactTitle">Contact</h2>
-    <p data-key="contactIntro">Follow the official VALRYN platforms or contact the team directly.</p>
+  <section id="contact">
+    <h2 data-key="contactTitle">Contact</h2>
+    <p data-key="contactIntro">Follow the official VALRYN platforms or contact the team directly.</p>
 
-    <a class="contact-link" href="mailto:valrynllc@gmail.com"><span data-key="emailLabel">Email</span>: valrynllc@gmail.com</a>
-    <a class="contact-link" href="https://www.youtube.com/@valrynofficial" target="_blank">YouTube: @valrynofficial</a>
-    <a class="contact-link" href="https://www.tiktok.com/@valryn.media" target="_blank">TikTok: @valryn.media</a>
-    <a class="contact-link" href="https://www.instagram.com/valryn.official" target="_blank">Instagram: @valryn.official</a>
-  </section>
+    <a class="contact-link" href="mailto:valrynllc@gmail.com"><span data-key="emailLabel">Email</span>: valrynllc@gmail.com</a>
+    <a class="contact-link" href="https://www.youtube.com/@valrynofficial" target="_blank">YouTube: @valrynofficial</a>
+    <a class="contact-link" href="https://www.tiktok.com/@valryn.media" target="_blank">TikTok: @valryn.media</a>
+    <a class="contact-link" href="https://www.instagram.com/valryn.official" target="_blank">Instagram: @valryn.official</a>
+  </section>
 
-  <footer data-key="footerText">© 2026 VALRYN. Nap rive ansanm.</footer>
+  <footer data-key="footerText">© 2026 VALRYN. Nap rive ansanm.</footer>
 </div>
 
 <script>
 const landingGreetings = [
-  ["🇭🇹","Nap rive ansanm"],["🇺🇸","Hello"],["🇫🇷","Bonjour"],["🇪🇸","Hola"],
-  ["🇨🇳","你好"],["🇯🇵","Konnichiwa"],["🇧🇷","Olá"],["🇮🇹","Ciao"],
-  ["🇮🇳","Namaste"],["🇸🇦","Salam"],["🇳🇬","Bawo"],["🇰🇷","Annyeong"],
-  ["🇩🇪","Hallo"],["🇵🇹","Olá"],["🇿🇦","Sawubona"]
+  ["🇭🇹","Nap rive ansanm"],["🇺🇸","Hello"],["🇫🇷","Bonjour"],["🇪🇸","Hola"],
+  ["🇨🇳","你好"],["🇯🇵","Konnichiwa"],["🇧🇷","Olá"],["🇮🇹","Ciao"],
+  ["🇮🇳","Namaste"],["🇸🇦","Salam"],["🇳🇬","Bawo"],["🇰🇷","Annyeong"],
+  ["🇩🇪","Hallo"],["🇵🇹","Olá"],["🇿🇦","Sawubona"]
 ];
 
 let greetIndex = 0;
 setInterval(() => {
-  greetIndex = (greetIndex + 1) % landingGreetings.length;
-  document.getElementById("landingFlag").innerText = landingGreetings[greetIndex][0];
-  document.getElementById("landingGreeting").innerText = landingGreetings[greetIndex][1];
+  greetIndex = (greetIndex + 1) % landingGreetings.length;
+  document.getElementById("landingFlag").innerText = landingGreetings[greetIndex][0];
+  document.getElementById("landingGreeting").innerText = landingGreetings[greetIndex][1];
 }, 3000);
 
 function enterSite() {
-  document.getElementById("landing").style.display = "none";
-  document.getElementById("main").style.display = "block";
-  window.scrollTo(0,0);
-  setTimeMessage();
+  document.getElementById("landing").style.display = "none";
+  document.getElementById("main").style.display = "block";
+  window.scrollTo(0,0);
+  setTimeMessage();
 }
 
 const translations = {
-  en: {
-    enterButton:"ENTER VALRYN", navAbout:"ABOUT", navRegions:"REGIONS", navMedia:"MEDIA", navImpact:"IMPACT", navSupport:"SUPPORT", navContact:"CONTACT",
-    aboutTitle:"About VALRYN", aboutP1:"VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.", aboutP2:"It is built to connect people, document real communities, and create structure for long-term impact.",
-    regionsTitle:"Regions", regionsIntro:"Haiti is the first active region, but the mission is global.", activeRegion:"Active Region", haiti:"🇭🇹 Haiti", haitiText:"Daily life, education, culture, people, community, and opportunity.", futureRegion:"Future Region", usa:"🇺🇸 United States", usaText:"Community stories, school content, entrepreneurship, and local development.", globalReach:"Global Reach", globalText:"Anywhere VALRYN reaches. Any place where VALRYN documents, builds, connects, or supports.",
-    mediaTitle:"Media", mediaIntro:"Education, daily life, culture, opportunity, and real community stories from different places.", educationTitle:"Education", educationText:"School content, students, learning, training, and youth development.", dailyLifeTitle:"Daily Life", dailyLifeText:"Real moments, family, work, streets, culture, and community life.", cultureTitle:"Culture", cultureText:"Food, language, music, traditions, identity, and connection.", opportunityTitle:"Opportunity", opportunityText:"Business ideas, ownership, local projects, and development.", videoTitle:"Video Library", videoText:"Videos and stories coming soon. Future uploads can include subtitles in multiple languages.",
-    impactTitle:"Impact Tracker", impactIntro:"VALRYN will track growth, projects, videos, and community work openly as the platform expands.", statRegion:"Active Region", statVideos:"Published Website Videos", statProjects:"Community Projects", comingSoon:"Coming Soon", supportOptions:"Support Options",
-    supportTitle:"Support VALRYN", supportText:"Support options are coming soon. Future support may help fund media, equipment, community work, school supplies, transportation, documentation, and long-term development projects.",
-    contactTitle:"Contact", contactIntro:"Follow the official VALRYN platforms or contact the team directly.", emailLabel:"Email", footerText:"© 2026 VALRYN. Nap rive ansanm."
-  },
-  ht: {
-    enterButton:"ANTRE NAN VALRYN", navAbout:"SOU NOU", navRegions:"REJYON", navMedia:"MEDYA", navImpact:"ENPAK", navSupport:"SIPÒ", navContact:"KONTAK",
-    aboutTitle:"Sou VALRYN", aboutP1:"VALRYN se yon platfòm mondyal pou opòtinite, medya, edikasyon, kominote, kilti, ak libète ekonomik.", aboutP2:"Li fèt pou konekte moun, dokimante kominote reyèl, epi kreye estrikti pou enpak alontèm.",
-    regionsTitle:"Rejyon yo", regionsIntro:"Ayiti se premye rejyon aktif la, men misyon an mondyal.", activeRegion:"Rejyon Aktif", haiti:"🇭🇹 Ayiti", haitiText:"Lavi chak jou, edikasyon, kilti, moun, kominote, ak opòtinite.", futureRegion:"Rejyon Lavni", usa:"🇺🇸 Etazini", usaText:"Istwa kominote, kontni lekòl, antreprenarya, ak devlopman lokal.", globalReach:"Rive Mondyal", globalText:"Nenpòt kote VALRYN rive. Nenpòt kote VALRYN dokimante, bati, konekte, oswa sipòte.",
-    mediaTitle:"Medya", mediaIntro:"Edikasyon, lavi chak jou, kilti, opòtinite, ak istwa kominote reyèl soti nan diferan kote.", educationTitle:"Edikasyon", educationText:"Kontni lekòl, elèv, aprantisaj, fòmasyon, ak devlopman jèn yo.", dailyLifeTitle:"Lavi Chak Jou", dailyLifeText:"Moman reyèl, fanmi, travay, lari, kilti, ak lavi kominote.", cultureTitle:"Kilti", cultureText:"Manje, lang, mizik, tradisyon, idantite, ak koneksyon.", opportunityTitle:"Opòtinite", opportunityText:"Lide biznis, pwopriyetè, pwojè lokal, ak devlopman.", videoTitle:"Bibliyotèk Videyo", videoText:"Videyo ak istwa ap vini byento. Videyo yo ka gen soutit nan plizyè lang.",
-    impactTitle:"Swivi Enpak", impactIntro:"VALRYN ap suiv kwasans, pwojè, videyo, ak travay kominotè ouvètman pandan platfòm nan ap grandi.", statRegion:"Rejyon Aktif", statVideos:"Videyo Pibliye sou Sit la", statProjects:"Pwojè Kominotè", comingSoon:"Ap Vini Byento", supportOptions:"Opsyon Sipò",
-    supportTitle:"Sipòte VALRYN", supportText:"Opsyon sipò yo ap vini byento. Sipò alavni ka ede finanse medya, ekipman, travay kominotè, materyèl lekòl, transpò, dokimantasyon, ak pwojè devlopman alontèm.",
-    contactTitle:"Kontak", contactIntro:"Swiv platfòm ofisyèl VALRYN yo oswa kontakte ekip la dirèkteman.", emailLabel:"Imèl", footerText:"© 2026 VALRYN. Nap rive ansanm."
-  },
-  fr: {
-    enterButton:"ENTRER DANS VALRYN", navAbout:"À PROPOS", navRegions:"RÉGIONS", navMedia:"MÉDIAS", navImpact:"IMPACT", navSupport:"SOUTIEN", navContact:"CONTACT",
-    aboutTitle:"À propos de VALRYN", aboutP1:"VALRYN est une plateforme mondiale pour les opportunités, les médias, l’éducation, la communauté, la culture et la liberté économique.", aboutP2:"Elle est conçue pour connecter les personnes, documenter de vraies communautés et créer une structure pour un impact durable.",
-    regionsTitle:"Régions", regionsIntro:"Haïti est la première région active, mais la mission est mondiale.", activeRegion:"Région Active", haiti:"🇭🇹 Haïti", haitiText:"Vie quotidienne, éducation, culture, personnes, communauté et opportunités.", futureRegion:"Région Future", usa:"🇺🇸 États-Unis", usaText:"Histoires communautaires, contenu scolaire, entrepreneuriat et développement local.", globalReach:"Portée Mondiale", globalText:"Partout où VALRYN arrive. Tout lieu où VALRYN documente, construit, connecte ou soutient.",
-    mediaTitle:"Médias", mediaIntro:"Éducation, vie quotidienne, culture, opportunités et vraies histoires communautaires de différents lieux.", educationTitle:"Éducation", educationText:"Contenu scolaire, élèves, apprentissage, formation et développement des jeunes.", dailyLifeTitle:"Vie Quotidienne", dailyLifeText:"Moments réels, famille, travail, rues, culture et vie communautaire.", cultureTitle:"Culture", cultureText:"Nourriture, langue, musique, traditions, identité et connexion.", opportunityTitle:"Opportunité", opportunityText:"Idées d’entreprise, propriété, projets locaux et développement.", videoTitle:"Bibliothèque Vidéo", videoText:"Vidéos et histoires bientôt disponibles. Les futurs téléchargements pourront inclure des sous-titres en plusieurs langues.",
-    impactTitle:"Suivi de l’Impact", impactIntro:"VALRYN suivra publiquement la croissance, les projets, les vidéos et le travail communautaire à mesure que la plateforme grandit.", statRegion:"Région Active", statVideos:"Vidéos Publiées sur le Site", statProjects:"Projets Communautaires", comingSoon:"Bientôt Disponible", supportOptions:"Options de Soutien",
-    supportTitle:"Soutenir VALRYN", supportText:"Les options de soutien arrivent bientôt. Le soutien futur pourra aider à financer les médias, l’équipement, le travail communautaire, les fournitures scolaires, le transport, la documentation et les projets de développement à long terme.",
-    contactTitle:"Contact", contactIntro:"Suivez les plateformes officielles de VALRYN ou contactez directement l’équipe.", emailLabel:"E-mail", footerText:"© 2026 VALRYN. Nap rive ansanm."
-  },
-  es: {
-    enterButton:"ENTRAR A VALRYN", navAbout:"SOBRE", navRegions:"REGIONES", navMedia:"MEDIOS", navImpact:"IMPACTO", navSupport:"APOYO", navContact:"CONTACTO",
-    aboutTitle:"Sobre VALRYN", aboutP1:"VALRYN es una plataforma global para oportunidades, medios, educación, comunidad, cultura y libertad económica.", aboutP2:"Está creada para conectar personas, documentar comunidades reales y crear estructura para impacto a largo plazo.",
-    regionsTitle:"Regiones", regionsIntro:"Haití es la primera región activa, pero la misión es global.", activeRegion:"Región Activa", haiti:"🇭🇹 Haití", haitiText:"Vida diaria, educación, cultura, personas, comunidad y oportunidad.", futureRegion:"Región Futura", usa:"🇺🇸 Estados Unidos", usaText:"Historias comunitarias, contenido escolar, emprendimiento y desarrollo local.", globalReach:"Alcance Global", globalText:"Cualquier lugar donde llegue VALRYN. Todo lugar donde VALRYN documente, construya, conecte o apoye.",
-    mediaTitle:"Medios", mediaIntro:"Educación, vida diaria, cultura, oportunidad e historias comunitarias reales de diferentes lugares.", educationTitle:"Educación", educationText:"Contenido escolar, estudiantes, aprendizaje, capacitación y desarrollo juvenil.", dailyLifeTitle:"Vida Diaria", dailyLifeText:"Momentos reales, familia, trabajo, calles, cultura y vida comunitaria.", cultureTitle:"Cultura", cultureText:"Comida, idioma, música, tradiciones, identidad y conexión.", opportunityTitle:"Oportunidad", opportunityText:"Ideas de negocio, propiedad, proyectos locales y desarrollo.", videoTitle:"Biblioteca de Videos", videoText:"Videos e historias próximamente. Las futuras cargas pueden incluir subtítulos en varios idiomas.",
-    impactTitle:"Seguimiento de Impacto", impactIntro:"VALRYN seguirá públicamente el crecimiento, proyectos, videos y trabajo comunitario mientras la plataforma se expande.", statRegion:"Región Activa", statVideos:"Videos Publicados en el Sitio", statProjects:"Proyectos Comunitarios", comingSoon:"Próximamente", supportOptions:"Opciones de Apoyo",
-    supportTitle:"Apoyar VALRYN", supportText:"Las opciones de apoyo estarán disponibles pronto. El apoyo futuro puede ayudar a financiar medios, equipo, trabajo comunitario, útiles escolares, transporte, documentación y proyectos de desarrollo a largo plazo.",
-    contactTitle:"Contacto", contactIntro:"Sigue las plataformas oficiales de VALRYN o contacta directamente al equipo.", emailLabel:"Correo", footerText:"© 2026 VALRYN. Nap rive ansanm."
-  },
-  zh: {
-    enterButton:"进入 VALRYN", navAbout:"关于", navRegions:"地区", navMedia:"媒体", navImpact:"影响", navSupport:"支持", navContact:"联系",
-    aboutTitle:"关于 VALRYN", aboutP1:"VALRYN 是一个全球平台，连接机会、媒体、教育、社区、文化和经济自由。", aboutP2:"它的目标是连接人们，记录真实社区，并为长期影响建立结构。",
-    regionsTitle:"地区", regionsIntro:"海地是第一个活跃地区，但使命是全球性的。", activeRegion:"活跃地区", haiti:"🇭🇹 海地", haitiText:"日常生活、教育、文化、人民、社区和机会。", futureRegion:"未来地区", usa:"🇺🇸 美国", usaText:"社区故事、学校内容、创业和地方发展。", globalReach:"全球覆盖", globalText:"VALRYN 到达的任何地方。任何 VALRYN 记录、建设、连接或支持的地方。",
-    mediaTitle:"媒体", mediaIntro:"来自不同地方的教育、日常生活、文化、机会和真实社区故事。", educationTitle:"教育", educationText:"学校内容、学生、学习、培训和青年发展。", dailyLifeTitle:"日常生活", dailyLifeText:"真实时刻、家庭、工作、街道、文化和社区生活。", cultureTitle:"文化", cultureText:"食物、语言、音乐、传统、身份和连接。", opportunityTitle:"机会", opportunityText:"商业想法、所有权、本地项目和发展。", videoTitle:"视频库", videoText:"视频和故事即将推出。未来上传的视频可以包含多语言字幕。",
-    impactTitle:"影响追踪", impactIntro:"随着平台发展，VALRYN 将公开追踪增长、项目、视频和社区工作。", statRegion:"活跃地区", statVideos:"网站公开视频", statProjects:"社区项目", comingSoon:"即将推出", supportOptions:"支持选项",
-    supportTitle:"支持 VALRYN", supportText:"支持选项即将推出。未来的支持可以帮助资助媒体、设备、社区工作、学校用品、交通、记录和长期发展项目。",
-    contactTitle:"联系", contactIntro:"关注 VALRYN 官方平台或直接联系团队。", emailLabel:"电子邮件", footerText:"© 2026 VALRYN. Nap rive ansanm."
-  }
+  en: {
+    enterButton:"ENTER VALRYN", navAbout:"ABOUT", navRegions:"REGIONS", navMedia:"MEDIA", navImpact:"IMPACT", navSupport:"SUPPORT", navContact:"CONTACT",
+    aboutTitle:"About VALRYN", aboutP1:"VALRYN is a global platform for opportunity, media, education, community, culture, and economic freedom.", aboutP2:"It is built to connect people, document real communities, and create structure for long-term impact.",
+    regionsTitle:"Regions", regionsIntro:"Haiti is the first active region, but the mission is global.", activeRegion:"Active Region", haiti:"🇭🇹 Haiti", haitiText:"Daily life, education, culture, people, community, and opportunity.", futureRegion:"Future Region", usa:"🇺🇸 United States", usaText:"Community stories, school content, entrepreneurship, and local development.", globalReach:"Global Reach", globalText:"Anywhere VALRYN reaches. Any place where VALRYN documents, builds, connects, or supports.",
+    mediaTitle:"Media", mediaIntro:"Education, daily life, culture, opportunity, and real community stories from different places.", educationTitle:"Education", educationText:"School content, students, learning, training, and youth development.", dailyLifeTitle:"Daily Life", dailyLifeText:"Real moments, family, work, streets, culture, and community life.", cultureTitle:"Culture", cultureText:"Food, language, music, traditions, identity, and connection.", opportunityTitle:"Opportunity", opportunityText:"Business ideas, ownership, local projects, and development.", videoTitle:"Video Library", videoText:"Videos and stories coming soon. Future uploads can include subtitles in multiple languages.",
+    impactTitle:"Impact Tracker", impactIntro:"VALRYN will track growth, projects, videos, and community work openly as the platform expands.", statRegion:"Active Region", statVideos:"Published Website Videos", statProjects:"Community Projects", comingSoon:"Coming Soon", supportOptions:"Support Options",
+    supportTitle:"Support VALRYN", supportText:"Support options are coming soon. Future support may help fund media, equipment, community work, school supplies, transportation, documentation, and long-term development projects.",
+    contactTitle:"Contact", contactIntro:"Follow the official VALRYN platforms or contact the team directly.", emailLabel:"Email", footerText:"© 2026 VALRYN. Nap rive ansanm."
+  },
+  ht: {
+    enterButton:"ANTRE NAN VALRYN", navAbout:"SOU NOU", navRegions:"REJYON", navMedia:"MEDYA", navImpact:"ENPAK", navSupport:"SIPÒ", navContact:"KONTAK",
+    aboutTitle:"Sou VALRYN", aboutP1:"VALRYN se yon platfòm mondyal pou opòtinite, medya, edikasyon, kominote, kilti, ak libète ekonomik.", aboutP2:"Li fèt pou konekte moun, dokimante kominote reyèl, epi kreye estrikti pou enpak alontèm.",
+    regionsTitle:"Rejyon yo", regionsIntro:"Ayiti se premye rejyon aktif la, men misyon an mondyal.", activeRegion:"Rejyon Aktif", haiti:"🇭🇹 Ayiti", haitiText:"Lavi chak jou, edikasyon, kilti, moun, kominote, ak opòtinite.", futureRegion:"Rejyon Lavni", usa:"🇺🇸 Etazini", usaText:"Istwa kominote, kontni lekòl, antreprenarya, ak devlopman lokal.", globalReach:"Rive Mondyal", globalText:"Nenpòt kote VALRYN rive. Nenpòt kote VALRYN dokimante, bati, konekte, oswa sipòte.",
+    mediaTitle:"Medya", mediaIntro:"Edikasyon, lavi chak jou, kilti, opòtinite, ak istwa kominote reyèl soti nan diferan kote.", educationTitle:"Edikasyon", educationText:"Kontni lekòl, elèv, aprantisaj, fòmasyon, ak devlopman jèn yo.", dailyLifeTitle:"Lavi Chak Jou", dailyLifeText:"Moman reyèl, fanmi, travay, lari, kilti, ak lavi kominote.", cultureTitle:"Kilti", cultureText:"Manje, lang, mizik, tradisyon, idantite, ak koneksyon.", opportunityTitle:"Opòtinite", opportunityText:"Lide biznis, pwopriyetè, pwojè lokal, ak devlopman.", videoTitle:"Bibliyotèk Videyo", videoText:"Videyo ak istwa ap vini byento. Videyo yo ka gen soutit nan plizyè lang.",
+    impactTitle:"Swivi Enpak", impactIntro:"VALRYN ap suiv kwasans, pwojè, videyo, ak travay kominotè ouvètman pandan platfòm nan ap grandi.", statRegion:"Rejyon Aktif", statVideos:"Videyo Pibliye sou Sit la", statProjects:"Pwojè Kominotè", comingSoon:"Ap Vini Byento", supportOptions:"Opsyon Sipò",
+    supportTitle:"Sipòte VALRYN", supportText:"Opsyon sipò yo ap vini byento. Sipò alavni ka ede finanse medya, ekipman, travay kominotè, materyèl lekòl, transpò, dokimantasyon, ak pwojè devlopman alontèm.",
+    contactTitle:"Kontak", contactIntro:"Swiv platfòm ofisyèl VALRYN yo oswa kontakte ekip la dirèkteman.", emailLabel:"Imèl", footerText:"© 2026 VALRYN. Nap rive ansanm."
+  },
+  fr: {
+    enterButton:"ENTRER DANS VALRYN", navAbout:"À PROPOS", navRegions:"RÉGIONS", navMedia:"MÉDIAS", navImpact:"IMPACT", navSupport:"SOUTIEN", navContact:"CONTACT",
+    aboutTitle:"À propos de VALRYN", aboutP1:"VALRYN est une plateforme mondiale pour les opportunités, les médias, l’éducation, la communauté, la culture et la liberté économique.", aboutP2:"Elle est conçue pour connecter les personnes, documenter de vraies communautés et créer une structure pour un impact durable.",
+    regionsTitle:"Régions", regionsIntro:"Haïti est la première région active, mais la mission est mondiale.", activeRegion:"Région Active", haiti:"🇭🇹 Haïti", haitiText:"Vie quotidienne, éducation, culture, personnes, communauté et opportunités.", futureRegion:"Région Future", usa:"🇺🇸 États-Unis", usaText:"Histoires communautaires, contenu scolaire, entrepreneuriat et développement local.", globalReach:"Portée Mondiale", globalText:"Partout où VALRYN arrive. Tout lieu où VALRYN documente, construit, connecte ou soutient.",
+    mediaTitle:"Médias", mediaIntro:"Éducation, vie quotidienne, culture, opportunités et vraies histoires communautaires de différents lieux.", educationTitle:"Éducation", educationText:"Contenu scolaire, élèves, apprentissage, formation et développement des jeunes.", dailyLifeTitle:"Vie Quotidienne", dailyLifeText:"Moments réels, famille, travail, rues, culture et vie communautaire.", cultureTitle:"Culture", cultureText:"Nourriture, langue, musique, traditions, identité et connexion.", opportunityTitle:"Opportunité", opportunityText:"Idées d’entreprise, propriété, projets locaux et développement.", videoTitle:"Bibliothèque Vidéo", videoText:"Vidéos et histoires bientôt disponibles. Les futurs téléchargements pourront inclure des sous-titres en plusieurs langues.",
+    impactTitle:"Suivi de l’Impact", impactIntro:"VALRYN suivra publiquement la croissance, les projets, les vidéos et le travail communautaire à mesure que la plateforme grandit.", statRegion:"Région Active", statVideos:"Vidéos Publiées sur le Site", statProjects:"Projets Communautaires", comingSoon:"Bientôt Disponible", supportOptions:"Options de Soutien",
+    supportTitle:"Soutenir VALRYN", supportText:"Les options de soutien arrivent bientôt. Le soutien futur pourra aider à financer les médias, l’équipement, le travail communautaire, les fournitures scolaires, le transport, la documentation et les projets de développement à long terme.",
+    contactTitle:"Contact", contactIntro:"Suivez les plateformes officielles de VALRYN ou contactez directement l’équipe.", emailLabel:"E-mail", footerText:"© 2026 VALRYN. Nap rive ansanm."
+  },
+  es: {
+    enterButton:"ENTRAR A VALRYN", navAbout:"SOBRE", navRegions:"REGIONES", navMedia:"MEDIOS", navImpact:"IMPACTO", navSupport:"APOYO", navContact:"CONTACTO",
+    aboutTitle:"Sobre VALRYN", aboutP1:"VALRYN es una plataforma global para oportunidades, medios, educación, comunidad, cultura y libertad económica.", aboutP2:"Está creada para conectar personas, documentar comunidades reales y crear estructura para impacto a largo plazo.",
+    regionsTitle:"Regiones", regionsIntro:"Haití es la primera región activa, pero la misión es global.", activeRegion:"Región Activa", haiti:"🇭🇹 Haití", haitiText:"Vida diaria, educación, cultura, personas, comunidad y oportunidad.", futureRegion:"Región Futura", usa:"🇺🇸 Estados Unidos", usaText:"Historias comunitarias, contenido escolar, emprendimiento y desarrollo local.", globalReach:"Alcance Global", globalText:"Cualquier lugar donde llegue VALRYN. Todo lugar donde VALRYN documente, construya, conecte o apoye.",
+    mediaTitle:"Medios", mediaIntro:"Educación, vida diaria, cultura, oportunidad e historias comunitarias reales de diferentes lugares.", educationTitle:"Educación", educationText:"Contenido escolar, estudiantes, aprendizaje, capacitación y desarrollo juvenil.", dailyLifeTitle:"Vida Diaria", dailyLifeText:"Momentos reales, familia, trabajo, calles, cultura y vida comunitaria.", cultureTitle:"Cultura", cultureText:"Comida, idioma, música, tradiciones, identidad y conexión.", opportunityTitle:"Oportunidad", opportunityText:"Ideas de negocio, propiedad, proyectos locales y desarrollo.", videoTitle:"Biblioteca de Videos", videoText:"Videos e historias próximamente. Las futuras cargas pueden incluir subtítulos en varios idiomas.",
+    impactTitle:"Seguimiento de Impacto", impactIntro:"VALRYN seguirá públicamente el crecimiento, proyectos, videos y trabajo comunitario mientras la plataforma se expande.", statRegion:"Región Activa", statVideos:"Videos Publicados en el Sitio", statProjects:"Proyectos Comunitarios", comingSoon:"Próximamente", supportOptions:"Opciones de Apoyo",
+    supportTitle:"Apoyar VALRYN", supportText:"Las opciones de apoyo estarán disponibles pronto. El apoyo futuro puede ayudar a financiar medios, equipo, trabajo comunitario, útiles escolares, transporte, documentación y proyectos de desarrollo a largo plazo.",
+    contactTitle:"Contacto", contactIntro:"Sigue las plataformas oficiales de VALRYN o contacta directamente al equipo.", emailLabel:"Correo", footerText:"© 2026 VALRYN. Nap rive ansanm."
+  },
+  zh: {
+    enterButton:"进入 VALRYN", navAbout:"关于", navRegions:"地区", navMedia:"媒体", navImpact:"影响", navSupport:"支持", navContact:"联系",
+    aboutTitle:"关于 VALRYN", aboutP1:"VALRYN 是一个全球平台，连接机会、媒体、教育、社区、文化和经济自由。", aboutP2:"它的目标是连接人们，记录真实社区，并为长期影响建立结构。",
+    regionsTitle:"地区", regionsIntro:"海地是第一个活跃地区，但使命是全球性的。", activeRegion:"活跃地区", haiti:"🇭🇹 海地", haitiText:"日常生活、教育、文化、人民、社区和机会。", futureRegion:"未来地区", usa:"🇺🇸 美国", usaText:"社区故事、学校内容、创业和地方发展。", globalReach:"全球覆盖", globalText:"VALRYN 到达的任何地方。任何 VALRYN 记录、建设、连接或支持的地方。",
+    mediaTitle:"媒体", mediaIntro:"来自不同地方的教育、日常生活、文化、机会和真实社区故事。", educationTitle:"教育", educationText:"学校内容、学生、学习、培训和青年发展。", dailyLifeTitle:"日常生活", dailyLifeText:"真实时刻、家庭、工作、街道、文化和社区生活。", cultureTitle:"文化", cultureText:"食物、语言、音乐、传统、身份和连接。", opportunityTitle:"机会", opportunityText:"商业想法、所有权、本地项目和发展。", videoTitle:"视频库", videoText:"视频和故事即将推出。未来上传的视频可以包含多语言字幕。",
+    impactTitle:"影响追踪", impactIntro:"随着平台发展，VALRYN 将公开追踪增长、项目、视频和社区工作。", statRegion:"活跃地区", statVideos:"网站公开视频", statProjects:"社区项目", comingSoon:"即将推出", supportOptions:"支持选项",
+    supportTitle:"支持 VALRYN", supportText:"支持选项即将推出。未来的支持可以帮助资助媒体、设备、社区工作、学校用品、交通、记录和长期发展项目。",
+    contactTitle:"联系", contactIntro:"关注 VALRYN 官方平台或直接联系团队。", emailLabel:"电子邮件", footerText:"© 2026 VALRYN. Nap rive ansanm."
+  }
 };
 
 const timeText = {
-  en:{morning:["Morning: Opportunity rises.","A new day begins. Opportunity moves across the world."],afternoon:["Afternoon: Connections grow.","Media, education, culture, and opportunity move across regions."],evening:["Evening: Momentum continues.","VALRYN bridges communities, cultures, and ideas."],night:["Night: Building never stops.","While the world rests, VALRYN keeps building what connects us all."]},
-  ht:{morning:["Maten: Opòtinite ap leve.","Yon nouvo jou kòmanse. Opòtinite ap deplase atravè mond lan."],afternoon:["Apremidi: Koneksyon yo ap grandi.","Medya, edikasyon, kilti, ak opòtinite ap deplase atravè rejyon yo."],evening:["Aswè: Moman an kontinye.","VALRYN ap bati pon ant kominote, kilti, ak lide."],night:["Lannwit: Travay la pa janm sispann.","Pandan mond lan ap repoze, VALRYN kontinye bati sa ki konekte nou tout."]},
-  fr:{morning:["Matin : Les opportunités se lèvent.","Un nouveau jour commence. Les opportunités avancent à travers le monde."],afternoon:["Après-midi : Les connexions grandissent.","Les médias, l’éducation, la culture et les opportunités avancent à travers les régions."],evening:["Soir : L’élan continue.","VALRYN relie les communautés, les cultures et les idées."],night:["Nuit : La construction ne s’arrête jamais.","Pendant que le monde se repose, VALRYN continue de construire ce qui nous connecte."]},
-  es:{morning:["Mañana: La oportunidad se levanta.","Un nuevo día comienza. La oportunidad se mueve por el mundo."],afternoon:["Tarde: Las conexiones crecen.","Los medios, la educación, la cultura y la oportunidad avanzan por las regiones."],evening:["Atardecer: El impulso continúa.","VALRYN conecta comunidades, culturas e ideas."],night:["Noche: La construcción nunca se detiene.","Mientras el mundo descansa, VALRYN sigue construyendo lo que nos conecta."]},
-  zh:{morning:["早晨：机会升起。","新的一天开始了。机会正在世界各地流动。"],afternoon:["下午：连接在增长。","媒体、教育、文化和机会正在跨地区发展。"],evening:["傍晚：势头继续。","VALRYN 连接社区、文化和思想。"],night:["夜晚：建设永不停歇。","当世界休息时，VALRYN 继续建设连接我们的东西。"]}
+  en:{morning:["Morning: Opportunity rises.","A new day begins. Opportunity moves across the world."],afternoon:["Afternoon: Connections grow.","Media, education, culture, and opportunity move across regions."],evening:["Evening: Momentum continues.","VALRYN bridges communities, cultures, and ideas."],night:["Night: Building never stops.","While the world rests, VALRYN keeps building what connects us all."]},
+  ht:{morning:["Maten: Opòtinite ap leve.","Yon nouvo jou kòmanse. Opòtinite ap deplase atravè mond lan."],afternoon:["Apremidi: Koneksyon yo ap grandi.","Medya, edikasyon, kilti, ak opòtinite ap deplase atravè rejyon yo."],evening:["Aswè: Moman an kontinye.","VALRYN ap bati pon ant kominote, kilti, ak lide."],night:["Lannwit: Travay la pa janm sispann.","Pandan mond lan ap repoze, VALRYN kontinye bati sa ki konekte nou tout."]},
+  fr:{morning:["Matin : Les opportunités se lèvent.","Un nouveau jour commence. Les opportunités avancent à travers le monde."],afternoon:["Après-midi : Les connexions grandissent.","Les médias, l’éducation, la culture et les opportunités avancent à travers les régions."],evening:["Soir : L’élan continue.","VALRYN relie les communautés, les cultures et les idées."],night:["Nuit : La construction ne s’arrête jamais.","Pendant que le monde se repose, VALRYN continue de construire ce qui nous connecte."]},
+  es:{morning:["Mañana: La oportunidad se levanta.","Un nuevo día comienza. La oportunidad se mueve por el mundo."],afternoon:["Tarde: Las conexiones crecen.","Los medios, la educación, la cultura y la oportunidad avanzan por las regiones."],evening:["Atardecer: El impulso continúa.","VALRYN conecta comunidades, culturas e ideas."],night:["Noche: La construcción nunca se detiene.","Mientras el mundo descansa, VALRYN sigue construyendo lo que nos conecta."]},
+  zh:{morning:["早晨：机会升起。","新的一天开始了。机会正在世界各地流动。"],afternoon:["下午：连接在增长。","媒体、教育、文化和机会正在跨地区发展。"],evening:["傍晚：势头继续。","VALRYN 连接社区、文化和思想。"],night:["夜晚：建设永不停歇。","当世界休息时，VALRYN 继续建设连接我们的东西。"]}
 };
 
 const heroImages = {
-  morning:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80",
-  afternoon:"https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
-  evening:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80",
-  night:"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=80"
+  morning:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80",
+  afternoon:"https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
+  evening:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80",
+  night:"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=80"
 };
 
 function getCurrentPeriod(){
-  const hour = new Date().getHours();
-  if(hour >= 5 && hour < 11) return "morning";
-  if(hour >= 11 && hour < 17) return "afternoon";
-  if(hour >= 17 && hour < 20) return "evening";
-  return "night";
+  const hour = new Date().getHours();
+  if(hour >= 5 && hour < 11) return "morning";
+  if(hour >= 11 && hour < 17) return "afternoon";
+  if(hour >= 17 && hour < 20) return "evening";
+  return "night";
 }
 
 function setTimeMessage(lang = document.getElementById("languageSelect").value){
-  const period = getCurrentPeriod();
-  const hero = document.getElementById("hero");
-  document.getElementById("timeTitle").innerText = timeText[lang][period][0];
-  document.getElementById("timeMessage").innerText = timeText[lang][period][1];
-  hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.90)),url("${heroImages[period]}")`;
+  const period = getCurrentPeriod();
+  const hero = document.getElementById("hero");
+  document.getElementById("timeTitle").innerText = timeText[lang][period][0];
+  document.getElementById("timeMessage").innerText = timeText[lang][period][1];
+  hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.90)),url("${heroImages[period]}")`;
 }
 
 function changeLanguage(lang){
-  const selected = translations[lang];
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    const key = el.getAttribute("data-key");
-    if(selected[key]) el.innerText = selected[key];
-  });
-  document.documentElement.lang = lang;
-  setTimeMessage(lang);
+  const selected = translations[lang];
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const key = el.getAttribute("data-key");
+    if(selected[key]) el.innerText = selected[key];
+  });
+  document.documentElement.lang = lang;
+  setTimeMessage(lang);
 }
 
 setTimeMessage();
