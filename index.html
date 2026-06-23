@@ -1293,23 +1293,69 @@
     };
 
     function changeLanguage(language) {
+  const selected = translations[language];
 
-      const selected = translations[language];
+  document.querySelectorAll("[data-key]").forEach(function(element) {
+    const key = element.getAttribute("data-key");
 
-      document.querySelectorAll("[data-key]").forEach(function(element) {
-
-        const key = element.getAttribute("data-key");
-
-        if (selected[key]) {
-
-          element.innerText = selected[key];
-
-        }
-
-      });
-
+    if (selected[key] && key !== "heroTitle" && key !== "heroText") {
+      element.innerText = selected[key];
     }
+  });
 
+  updateHeroTime(language);
+}
+function updateHeroTime(language) {
+  const hour = new Date().getHours();
+
+  const timeMessages = {
+    en: {
+      morning: ["Morning: Opportunity rises.", "A new day begins. Opportunity moves across the world."],
+      afternoon: ["Afternoon: Connections grow.", "Media, education, culture, and opportunity move across regions."],
+      evening: ["Evening: Momentum continues.", "VALRYN bridges communities, cultures, and ideas."],
+      night: ["Night: Building never stops.", "While the world rests, VALRYN keeps building what connects us all."]
+    },
+    ht: {
+      morning: ["Maten: Opòtinite ap leve.", "Yon nouvo jou kòmanse. Opòtinite ap deplase atravè mond lan."],
+      afternoon: ["Apremidi: Koneksyon yo ap grandi.", "Medya, edikasyon, kilti, ak opòtinite ap deplase atravè rejyon yo."],
+      evening: ["Aswè: Moman an kontinye.", "VALRYN ap bati pon ant kominote, kilti, ak lide."],
+      night: ["Lannwit: Travay la pa janm sispann.", "Pandan mond lan ap repoze, VALRYN kontinye bati sa ki konekte nou tout."]
+    },
+    fr: {
+      morning: ["Matin : les opportunités se lèvent.", "Un nouveau jour commence. Les opportunités avancent à travers le monde."],
+      afternoon: ["Après-midi : les connexions grandissent.", "Les médias, l’éducation, la culture et les opportunités avancent à travers les régions."],
+      evening: ["Soir : l’élan continue.", "VALRYN relie les communautés, les cultures et les idées."],
+      night: ["Nuit : la construction ne s’arrête jamais.", "Pendant que le monde se repose, VALRYN continue de construire ce qui nous relie tous."]
+    },
+    es: {
+      morning: ["Mañana: la oportunidad se levanta.", "Un nuevo día comienza. La oportunidad se mueve por el mundo."],
+      afternoon: ["Tarde: las conexiones crecen.", "Los medios, la educación, la cultura y la oportunidad avanzan por las regiones."],
+      evening: ["Atardecer: el impulso continúa.", "VALRYN conecta comunidades, culturas e ideas."],
+      night: ["Noche: la construcción nunca se detiene.", "Mientras el mundo descansa, VALRYN sigue construyendo lo que nos conecta a todos."]
+    },
+    zh: {
+      morning: ["早晨：机会升起。", "新的一天开始了。机会正在世界各地流动。"],
+      afternoon: ["下午：连接在增长。", "媒体、教育、文化和机会正在跨地区发展。"],
+      evening: ["傍晚：势头继续。", "VALRYN 连接社区、文化和思想。"],
+      night: ["夜晚：建设从不停下。", "当世界休息时，VALRYN 仍在建设连接所有人的桥梁。"]
+    }
+  };
+
+  let period = "night";
+
+  if (hour >= 5 && hour < 12) {
+    period = "morning";
+  } else if (hour >= 12 && hour < 17) {
+    period = "afternoon";
+  } else if (hour >= 17 && hour < 21) {
+    period = "evening";
+  }
+
+  document.querySelector('[data-key="heroTitle"]').innerText = timeMessages[language][period][0];
+  document.querySelector('[data-key="heroText"]').innerText = timeMessages[language][period][1];
+}
+
+updateHeroTime("en");
   </script>
 
 </body>
