@@ -1,0 +1,598 @@
+/* ===================================================================
+   VALRYN PLATFORM
+   Main Stylesheet
+
+   Project: VALRYN
+   Website: valryn.co
+   Version: 2.0
+   Author: Edmillard S. Pointdujour
+   Copyright © 2026 VALRYN. All Rights Reserved.
+   
+   Description:
+   This file contains the global styles used across the entire
+   VALRYN platform.
+
+   Sections
+   --------
+   01. Root Variables
+   02. Global Reset
+   03. Typography
+   04. Layout
+   05. Header
+   06. Navigation
+   07. Hero
+   08. Buttons
+   09. Cards
+   10. Sections
+   11. Footer
+   12. Animations
+   13. Responsive Design
+
+=================================================================== */
+
+/* ==========================================================
+   01. ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --gold:#f5c400;
+    --gold-light:#ffd84d;
+
+    --background:#070b16;
+
+    --surface:#121826;
+
+    --surface-light:#1d2638;
+
+    --white:#ffffff;
+
+    --text:#d6d6d6;
+
+    --border:rgba(255,255,255,.12);
+
+    --shadow:0 20px 50px rgba(0,0,0,.35);
+
+    --radius:22px;
+
+    --transition:.35s ease;
+
+    --max-width:1400px;
+
+}
+
+/* ==========================================================
+   02. GLOBAL RESET
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+select,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+
+/* ==========================================================
+   03. TYPOGRAPHY
+========================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+p {
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.section-title {
+    color: var(--gold);
+    font-size: clamp(38px, 6vw, 76px);
+    margin-bottom: 24px;
+    text-shadow: 0 0 24px rgba(245,196,0,.45);
+}
+
+.section-subtitle {
+    max-width: 850px;
+    font-size: clamp(18px, 2.2vw, 24px);
+    margin-bottom: 40px;
+}
+
+/* ==========================================================
+   04. GLOBAL LAYOUT
+========================================================== */
+
+.site-shell {
+    width: 100%;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(245,196,0,.08), transparent 35%),
+        linear-gradient(180deg, #050608 0%, #070b16 45%, #000 100%);
+}
+
+.container {
+    width: min(100% - 40px, var(--max-width));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-dark {
+    background: rgba(0,0,0,.25);
+}
+
+.section-header {
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+
+.grid {
+    display: grid;
+    gap: 28px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ==========================================================
+   05. HEADER
+========================================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 18px 0;
+    background: rgba(5,6,8,.62);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.header-inner {
+    width: min(100% - 40px, var(--max-width));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 54px;
+    height: auto;
+}
+
+.brand-name {
+    font-size: 22px;
+    letter-spacing: 8px;
+    font-weight: 900;
+    color: var(--gold);
+}
+
+
+/* ==========================================================
+   06. NAVIGATION
+========================================================== */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .8px;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 16px rgba(245,196,0,.75);
+}
+
+/* ==========================================================
+   07. HERO
+========================================================== */
+
+.hero{
+background:
+linear-gradient(rgba(5,8,20,.45),rgba(5,8,20,.90)),
+url("../assets/images/earth-hero.jpg");
+background-size:cover;
+background-position:center center;
+background-attachment:fixed;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at center, rgba(245,196,0,.18), transparent 32%),
+        linear-gradient(180deg, transparent 55%, var(--background) 100%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 40px, var(--max-width));
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-logo {
+    width: 210px;
+    margin: 0 auto 28px;
+    filter: drop-shadow(0 0 28px rgba(245,196,0,.65));
+}
+
+.hero-title {
+    color: var(--gold);
+    font-size: clamp(48px, 8vw, 118px);
+    line-height: .98;
+    margin-bottom: 24px;
+    text-shadow: 0 0 28px rgba(0,0,0,.9);
+}
+
+.hero-text {
+    max-width: 850px;
+    margin: 0 auto 36px;
+    font-size: clamp(20px, 2.4vw, 30px);
+    color: var(--white);
+    text-shadow: 0 0 18px rgba(0,0,0,.9);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================
+   08. BUTTONS
+========================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0 30px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #b88400, var(--gold), #ffe27a);
+    color: #090909;
+    box-shadow: 0 0 28px rgba(245,196,0,.42);
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 42px rgba(245,196,0,.7);
+}
+
+.btn-dark {
+    background: rgba(0,0,0,.55);
+    color: var(--white);
+    border: 1px solid var(--border);
+}
+
+.btn-dark:hover {
+    color: var(--gold);
+    border-color: rgba(245,196,0,.55);
+}
+
+
+/* ==========================================================
+   09. CARDS
+========================================================== */
+
+.card {
+    background: rgba(18,24,38,.72);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(245,196,0,.45);
+    box-shadow: 0 0 40px rgba(245,196,0,.12);
+}
+
+.card h3 {
+    color: var(--gold);
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+.card p {
+    font-size: 17px;
+}
+
+/* ==========================================================
+   10. SECTION LAYOUTS
+========================================================== */
+
+.section {
+    padding: 120px 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 70px;
+}
+
+.section-title {
+    font-size: clamp(2.4rem,5vw,4rem);
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+
+/* ==========================================================
+   11. FEATURE BOXES
+========================================================== */
+
+.feature-box {
+    padding: 35px;
+    border-radius: var(--radius);
+    background: rgba(20,26,42,.75);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: var(--transition);
+}
+
+.feature-box:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245,196,0,.4);
+    box-shadow: 0 15px 45px rgba(0,0,0,.45);
+}
+
+.feature-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,var(--gold),#ffd85c);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    color:#111;
+    margin-bottom:22px;
+}
+
+.feature-title {
+    color: var(--gold);
+    font-size: 24px;
+    margin-bottom:15px;
+}
+
+.feature-text {
+    color: var(--text-light);
+    line-height:1.8;
+}
+
+/* ==========================================================
+   12. HEADER & NAVIGATION
+========================================================== */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(7,11,22,.72);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    transition:var(--transition);
+}
+
+.header.scrolled{
+    background:rgba(7,11,22,.95);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:90px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    height:58px;
+}
+
+.logo h1{
+    font-size:1.7rem;
+    color:var(--gold);
+    letter-spacing:3px;
+    font-weight:900;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:var(--white);
+    font-weight:700;
+    position:relative;
+    transition:var(--transition);
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0%;
+    height:2px;
+    background:var(--gold);
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.mobile-menu{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:var(--gold);
+}
+
+/* ==========================================================
+   13. FOOTER
+========================================================== */
+
+.footer{
+    background:#05070d;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:90px 0 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:45px;
+}
+
+.footer h3{
+    color:var(--gold);
+    margin-bottom:22px;
+}
+
+.footer a{
+    display:block;
+    margin-bottom:12px;
+    color:var(--text-light);
+    transition:var(--transition);
+}
+
+.footer a:hover{
+    color:var(--gold);
+}
+
+.footer-bottom{
+    margin-top:60px;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:#8d97ad;
+    font-size:.95rem;
+}
