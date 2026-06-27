@@ -112,3 +112,19 @@ document.addEventListener("DOMContentLoaded",function(){
     VALRYN.init();
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const enterButton = document.querySelector(".intro-button");
+
+  if (enterButton) {
+    enterButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      document.body.classList.add("entered");
+
+      const home = document.querySelector("#home");
+      if (home) {
+        home.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+});
