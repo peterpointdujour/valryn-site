@@ -262,7 +262,7 @@ p {
 .hero{
 background:
 linear-gradient(rgba(5,8,20,.45),rgba(5,8,20,.90)),
-url("../assets/images/earth-hero.jpg");
+url("../images/valryn-earth-hero.jpg");
 background-size:cover;
 background-position:center center;
 background-attachment:fixed;
