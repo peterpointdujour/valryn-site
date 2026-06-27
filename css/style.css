@@ -606,3 +606,68 @@ p {
     font-size:.95rem;
 }
 
+/* ==========================================================
+   VALRYN INTRO SCREEN — SAFE VERSION
+========================================================== */
+
+.intro{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    padding:120px 20px;
+    background:
+        linear-gradient(rgba(0,0,0,.20), rgba(0,0,0,.92)),
+        url("../images/valryn-earth-hero.jpg");
+    background-size:cover;
+    background-position:center center;
+}
+
+.intro-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    color:#fff;
+}
+
+.intro-logo{
+    width:min(360px, 70vw);
+    margin-bottom:22px;
+    filter:drop-shadow(0 0 35px rgba(245,196,0,.65));
+}
+
+.intro-title{
+    font-size:clamp(4rem, 11vw, 8rem);
+    letter-spacing:24px;
+    color:#f5c400;
+    margin-bottom:12px;
+    text-shadow:0 0 38px rgba(245,196,0,.5);
+}
+
+.intro-tagline{
+    color:#f8e7a0;
+    letter-spacing:6px;
+    font-weight:800;
+    margin-bottom:28px;
+}
+
+.intro-button{
+    display:inline-block;
+    padding:18px 80px;
+    border-radius:12px;
+    background:linear-gradient(180deg,#ffd84d,#b88900);
+    color:#070707;
+    font-weight:900;
+    letter-spacing:3px;
+    text-decoration:none;
+    box-shadow:0 0 32px rgba(245,196,0,.45);
+}
+
+.intro-small{
+    margin-top:24px;
+    color:#fff;
+    font-weight:600;
+}
